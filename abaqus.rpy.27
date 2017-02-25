@@ -1,0 +1,102 @@
+# -*- coding: mbcs -*-
+#
+# Abaqus/CAE Release 6.14-2 replay file
+# Internal Version: 2014_08_22-09.00.46 134497
+# Run by leal26 on Fri Feb 24 19:00:11 2017
+#
+
+# from driverUtils import executeOnCaeGraphicsStartup
+# executeOnCaeGraphicsStartup()
+#: Executing "onCaeGraphicsStartup()" in the site directory ...
+from abaqus import *
+from abaqusConstants import *
+session.Viewport(name='Viewport: 1', origin=(0.0, 0.0), width=234.129150390625, 
+    height=254.352783203125)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].maximize()
+from caeModules import *
+from driverUtils import executeOnCaeStartup
+executeOnCaeStartup()
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=ON)
+execfile('generate_module.py', __main__.__dict__)
+#: A new model database has been created.
+#: The model "Model-1" has been created.
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+#: Warning: findAt could not find a geometric entity at (0.05551155, 0.04005073, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.04847109, 0.03772303, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.0418847, 0.03532538, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.03575938, 0.03286278, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.0301021, 0.03034021, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.0249169, 0.02776069, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.02021172, 0.02512923, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.01598859, 0.02245181, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.01225251, 0.01973245, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.00900845, 0.01697713, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.00625842, 0.01418987, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.00400541, 0.01137667, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.00225143, 0.00854351, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.00099945, 0.00569441, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.00024948, 0.00283536, 0.0)
+#: Warning: findAt could not find a geometric entity at (2.52e-06, -1.874e-05, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.00025955, -0.00189246, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.00101957, -0.0037379, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.00228159, -0.00552703, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.00404558, -0.00722891, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.00630855, -0.0088185, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.00906849, -0.01026684, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.01232241, -0.01154892, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.01606828, -0.01263877, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.0203011, -0.0135134, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.0250159, -0.01415082, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.03021062, -0.01453006, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.0358773, -0.01463313, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.04201191, -0.01444306, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.04860745, -0.01394586, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.05565693, -0.01312856, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.06315433, -0.01198117, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.07109165, -0.01049475, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.07946089, -0.00866628, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.08825403, -0.00649081, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.09746108, -0.00396836, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.10707305, -0.00110096, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.38227576, 0.11131686, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.39775279, 0.11700081, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.41333267, 0.12247945, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.42900038, 0.12772179, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.44473894, 0.13269786, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.46053334, 0.13738066, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.47636758, 0.14174321, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.49222566, 0.14576054, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.50809158, 0.14941064, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.52394934, 0.15267057, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.53978294, 0.15552332, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.55557638, 0.15795092, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.57131367, 0.15993841, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.58697979, 0.1614748, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.60255776, 0.16255012, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.61803258, 0.1631574, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.63338923, 0.16329267, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.64861074, 0.16295495, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.66368309, 0.16214526, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.6785903, 0.16086664, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.69331835, 0.15912612, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.70785125, 0.15693371, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.72217403, 0.15430046, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.73627464, 0.15124237, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.75013613, 0.14777547, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.76374647, 0.1439188, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.77709068, 0.13969537, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.79015577, 0.1351292, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.80292971, 0.1302463, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.81539754, 0.1250737, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.82754825, 0.11964142, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.83936982, 0.11398147, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.8508483, 0.10812685, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.86197465, 0.10211058, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.8727359, 0.09596766, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.88312205, 0.08973312, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.89312308, 0.08344494, 0.0)
+#: The model database has been saved to "D:\Google Drive\PhD\MEEN689\project\generate_seed_module\wing_model.cae".
+p1 = mdb.models['Model-1'].parts['wing_structure']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)

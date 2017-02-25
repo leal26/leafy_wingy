@@ -1,0 +1,62 @@
+# -*- coding: mbcs -*-
+#
+# Abaqus/CAE Release 6.14-2 replay file
+# Internal Version: 2014_08_22-09.00.46 134497
+# Run by leal26 on Fri Feb 24 18:56:56 2017
+#
+
+# from driverUtils import executeOnCaeGraphicsStartup
+# executeOnCaeGraphicsStartup()
+#: Executing "onCaeGraphicsStartup()" in the site directory ...
+from abaqus import *
+from abaqusConstants import *
+session.Viewport(name='Viewport: 1', origin=(0.0, 0.0), width=234.129150390625, 
+    height=254.352783203125)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].maximize()
+from caeModules import *
+from driverUtils import executeOnCaeStartup
+executeOnCaeStartup()
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=ON)
+execfile('generate_module.py', __main__.__dict__)
+#: A new model database has been created.
+#: The model "Model-1" has been created.
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+#: Warning: findAt could not find a geometric entity at (0.07092867, 0.04955643, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.06300007, 0.04709863, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.05551155, 0.04456085, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.04847109, 0.04194513, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.0418847, 0.03925745, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.03575938, 0.03650183, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.0301021, 0.03368423, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.0249169, 0.03080671, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.02021172, 0.02787722, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.01598859, 0.02489879, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.01225251, 0.0218774, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.00900845, 0.01881709, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.00625842, 0.01572581, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.00400541, 0.01260659, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.00225143, 0.00946543, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.00099945, 0.00630833, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.00024948, 0.00314127, 0.0)
+#: Warning: findAt could not find a geometric entity at (2.52e-06, -1.586e-05, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.00025955, -0.00160185, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.00101957, -0.00318679, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.00228159, -0.00476571, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.00404558, -0.00633661, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.00630855, -0.00789747, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.00906849, -0.00944431, 0.0)
+#: Warning: findAt could not find a geometric entity at (0.01232241, -0.01097512, 0.0)
+#: The model database has been saved to "D:\Google Drive\PhD\MEEN689\project\generate_seed_module\wing_model.cae".
+p1 = mdb.models['Model-1'].parts['wing_structure']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.81973, 
+    farPlane=2.6357, width=0.996564, height=0.483401, cameraPosition=(1.78024, 
+    0.754936, 1.72385), cameraUpVector=(-0.361808, 0.775002, -0.518138))
+p1 = mdb.models['Model-1'].parts['wing_structure']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.8059, 
+    farPlane=2.65206, width=0.988989, height=0.479727, cameraPosition=(1.85, 
+    0.821218, 1.63855), cameraUpVector=(-0.398456, 0.754423, -0.521612), 
+    cameraTarget=(0.543933, 0.00422509, 0.0323838))
