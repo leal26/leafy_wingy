@@ -1,0 +1,5 @@
+<?xml version="1.0"?><msgwrapper><Started><phase type="symconst">BATCHPRE_PHASE</phase><jobName type="string">Job-1</jobName><clientHost type="string">AERO-GLRJMD2</clientHost><handle type="integer">0</handle></Started>
+<Error><message type="string">90 elements have missing property definitions. The elements have been identified in element set ErrElemMissingSection.</message><phase type="symconst">BATCHPRE_PHASE</phase><jobName type="string">Job-1</jobName></Error>
+<Odb_File><file type="string">C:\Users\leal26\Documents\GitHub\leafy_wingy\Job-1.odb</file><phase type="symconst">BATCHPRE_PHASE</phase><jobName type="string">Job-1</jobName></Odb_File>
+<Aborted><message type="string">Analysis phase failed due to errors</message><phase type="symconst">BATCHPRE_PHASE</phase><jobName type="string">Job-1</jobName></Aborted>
+<ERROR><message type="string">Analysis Input File Processor exited with an error.</message><jobName type="string">Job-1</jobName></ERROR><JOB_ABORTED><message type="string">Analysis Input File Processor exited with an error.</message><jobName type="string">Job-1</jobName></JOB_ABORTED></msgwrapper>
