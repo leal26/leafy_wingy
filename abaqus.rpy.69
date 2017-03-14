@@ -1,0 +1,100 @@
+# -*- coding: mbcs -*-
+#
+# Abaqus/CAE Release 6.14-2 replay file
+# Internal Version: 2014_08_22-09.00.46 134497
+# Run by leal26 on Tue Mar 14 13:24:56 2017
+#
+
+# from driverUtils import executeOnCaeGraphicsStartup
+# executeOnCaeGraphicsStartup()
+#: Executing "onCaeGraphicsStartup()" in the site directory ...
+from abaqus import *
+from abaqusConstants import *
+session.Viewport(name='Viewport: 1', origin=(0.0, 0.0), width=234.129150390625, 
+    height=264.936126708984)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].maximize()
+from caeModules import *
+from driverUtils import executeOnCaeStartup
+executeOnCaeStartup()
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=ON)
+execfile('generate_module.py', __main__.__dict__)
+#: A new model database has been created.
+#: The model "Model-1" has been created.
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+#* TypeError: 'float' object has no attribute '__getitem__'
+#* File "generate_module.py", line 83, in <module>
+#*     wing_venation_generator(wing_data, venation_data, spar_locations, span)
+#* File 
+#* "C:\Users\leal26\Documents\GitHub\abaqus_tools\structure_generation.py", 
+#* line 74, in wing_venation_generator
+#*     for i in range(len(spar_locations['x1'])):
+execfile('C:/Users/leal26/Documents/GitHub/leafy_wingy/generate_module.py', 
+    __main__.__dict__)
+#* NameError: name 'BREAK' is not defined
+#* File "C:/Users/leal26/Documents/GitHub/leafy_wingy/generate_module.py", line 
+#* 84, in <module>
+#*     BREAK
+p = mdb.models['Model-1'].parts['wing_structure']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.67025, 
+    farPlane=2.36827, width=0.0493787, height=0.0222033, cameraPosition=(
+    1.44487, 1.29657, 1.32557), cameraTarget=(0.27905, 0.130748, 0.159747))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.91066, 
+    farPlane=2.30955, cameraPosition=(0.80341, 1.23843, 1.76458), 
+    cameraUpVector=(-0.599851, 0.536417, -0.593662), cameraTarget=(0.279049, 
+    0.130748, 0.159747))
+session.viewports['Viewport: 1'].view.setValues(session.views['Front'])
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    adaptiveMeshConstraints=ON, optimizationTasks=OFF, 
+    geometricRestrictions=OFF, stopConditions=OFF)
+mdb.models['Model-1'].StaticStep(name='Step-1', previous='Initial', nlgeom=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Step-1')
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=ON, bcs=ON, 
+    predefinedFields=ON, connectors=ON, adaptiveMeshConstraints=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=OFF, bcs=OFF, 
+    predefinedFields=OFF, connectors=OFF)
+a = mdb.models['Model-1'].rootAssembly
+a.DatumCsysByDefault(CARTESIAN)
+p = mdb.models['Model-1'].parts['wing_structure']
+a.Instance(name='wing_structure-1', part=p, dependent=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=ON, bcs=ON, 
+    predefinedFields=ON, connectors=ON)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.74044, 
+    farPlane=2.71199, width=0.971232, height=0.436717, cameraPosition=(2.18706, 
+    0.642177, 1.36334), cameraUpVector=(-0.579423, 0.784494, -0.220993), 
+    cameraTarget=(0.543758, -0.00661778, 0.0324036))
+a = mdb.models['Model-1'].rootAssembly
+f1 = a.instances['wing_structure-1'].faces
+faces1 = f1.getSequenceFromMask(mask=('[#0:2 #40800 #0 #1008000 ]', ), )
+region = a.Set(faces=faces1, name='Set-1')
+mdb.models['Model-1'].EncastreBC(name='BC-1', createStepName='Step-1', 
+    region=region, localCsys=None)
+a = mdb.models['Model-1'].rootAssembly
+region = a.sets['Set-1']
+mdb.models['Model-1'].EncastreBC(name='BC-2', createStepName='Step-1', 
+    region=region, localCsys=None)
+p1 = mdb.models['Model-1'].parts['wing_structure']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+session.viewports['Viewport: 1'].view.setValues(cameraPosition=(0.499994, 
+    0.0195499, 2.06926), cameraUpVector=(0.0879894, 0.996121, 0), 
+    cameraTarget=(0.499994, 0.0195499, 0.05))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.60295, 
+    farPlane=2.43557, cameraPosition=(1.69882, 0.373695, 1.63581), 
+    cameraUpVector=(0.0381113, 0.968736, -0.24515), cameraTarget=(0.499994, 
+    0.0195499, 0.05))
+p = mdb.models['Model-1'].parts['wing_structure']
+f = p.faces
+faces = f.getSequenceFromMask(mask=('[#0:4 #8000 ]', ), )
+p.Set(faces=faces, name='Set-1')
+#: The set 'Set-1' has been created (1 face).
+a = mdb.models['Model-1'].rootAssembly
+a.regenerate()
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+a = mdb.models['Model-1'].rootAssembly
+region = a.instances['wing_structure-1'].sets['Set-1']
+mdb.models['Model-1'].EncastreBC(name='BC-3', createStepName='Step-1', 
+    region=region, localCsys=None)

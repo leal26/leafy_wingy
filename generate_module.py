@@ -5,7 +5,7 @@ from venation_module import generate_venation
 from structure_generation import *
 from airfoil_module import CST, create_x
 from xfoil_module import create_input
-
+from aerodynamic_module import stress_under_aerodynamic_load
 # Python libraries
 import numpy as np
 
@@ -21,8 +21,10 @@ executeOnCaeStartup()
 # Model parameters
 span = .1
 chord = 1.
+velocity = 20.
+altitude = '10000'
 datafile = 'airfoil.txt'
-
+spar_x_coordinate = [0.2, 0.4]
 
 # CST parameters:
 Au = [0.1805, 0.1622]
@@ -32,11 +34,16 @@ x = create_x(chord, n = 100, distribution = 'polar')
 y = CST(x, chord, deltaz, Au, Al)
 create_input(x, y['u'], y['l'], datafile)
 
+# Spar coordinates
+spar_y_coordinate = CST(spar_x_coordinate, chord, deltaz, Au, Al)
+spar_locations = {'x1':spar_x_coordinate, 'y1':spar_y_coordinate['u'],
+                  'x2':spar_x_coordinate, 'y2':spar_y_coordinate['l']}
+
 # Actuator positioning
 x_u1 = [.1,.3,.5,.7]
-x_u2 = [.2,.4,.6,.8]
+x_u2 = [.15,.35,.6,.8]
 x_l1 = [.1,.3,.5,.7]
-x_l2 = [.2,.4,.6,.8]
+x_l2 = [.15,.35,.6,.8]
 
 y_u1 = list(CST(x_u1, chord, deltaz[0], Au=Au))
 y_u2 = list(CST(x_u2, chord, deltaz[0], Au=Au))
@@ -52,10 +59,12 @@ SMA_thickness = 0.002
 SMA_properties = Materials['TiNiCu-M+']
 venation_properties = aluminum(aluminum_type, aluminum_thickness)
 
-material_sets = ['Set-OML-Aluminum','Set-SMA','Set-Venation-Structure']
-material_properties = [aluminum_properties, SMA_properties, venation_properties]
-material_names = ['AL-2024', 'SMA', 'AL-6061']
-material_thicknesses = [aluminum_thickness, SMA_thickness, aluminum_thickness]
+material_sets = ['Set-OML-Aluminum','Set-SMA','Set-Venation-Structure', 'Set-Spars']
+material_properties = [aluminum_properties, SMA_properties, venation_properties,
+                       venation_properties]
+material_names = ['AL-2024', 'SMA', 'AL-6061', 'AL-6061']
+material_thicknesses = [aluminum_thickness, SMA_thickness, aluminum_thickness,
+                        aluminum_thickness]
 
 # Abaqus
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -75,7 +84,7 @@ venation_data['y'] = list((np.array(venation_data['y1']) +
 venation_data['z'] = [0 for i in range(len(venation_data['x']))]
 
 # Generating structure
-wing_venation_generator(wing_data, venation_data, span)
+wing_venation_generator(wing_data, venation_data, span, spar_locations)
 
 # Partitioning
 p = mdb.models['Model-1'].parts['wing_structure']
@@ -90,9 +99,6 @@ a.DatumCsysByDefault(CARTESIAN)
 p = mdb.models['Model-1'].parts['wing_structure']
 a.Instance(name='wing_structure-1', part=p, dependent=ON)
 
-# Create step
-mdb.models['Model-1'].StaticStep(name='Analysis', previous='Initial',
-    initialInc=0.1, nlgeom=ON)
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # SURFACES AND SETS
 # Surface for Outer Mold Line
@@ -101,11 +107,18 @@ pickedRegions = enhanced_findAt(f, wing_data['x'], wing_data['y'],
                                 wing_data['z'], coordinate_type = 'face_nodes')
 p.Surface(side2Faces = pickedRegions, name='Surf-OML')
 
-# Surface for internal Venation structure
+# Set for internal Venation structure
 pickedRegions = enhanced_findAt(f, venation_data['x'], venation_data['y'],
                                 venation_data['z'], coordinate_type = 'face_nodes',
                                 ratio = 1.)
 p.Set(faces = pickedRegions, name='Set-Venation-Structure')
+
+# Set for Main box
+spar_data = {'x':spar_x_coordinate, 'y':[0,0], 'z':[span/2., span/2.]}
+pickedRegions = enhanced_findAt(f, spar_data['x'], spar_data['y'],
+                                spar_data['z'], coordinate_type = 'face_nodes',
+                                ratio = 1.)
+p.Set(faces = pickedRegions, name='Set-Spars')
 
 ## Find Set-SMA and Set OML-Aluminum
 # List of actuator coordinates
@@ -133,7 +146,7 @@ p.Set(faces = PickedFace, name='Set-SMA')
 f = p.faces
 pickedRegions = enhanced_findAt(f, wing_data['x'] + [chord],
                                 wing_data['y'] + [0],
-                                wing_data['z'] + [span/2.], 
+                                wing_data['z'] + [span/2.],
                                 coordinate_type = 'face_nodes',
                                 not_select = PickedFace)
 p.Set(faces = pickedRegions, name='Set-OML-Aluminum')
@@ -162,3 +175,5 @@ for i in range(len(material_properties)):
 
 mdb.saveAs(
     pathName='D:/Google Drive/PhD/MEEN689/project/generate_seed_module/wing_model')
+
+print stress_under_aerodynamic_load(x, y, velocity, altitude, chord)
