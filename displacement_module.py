@@ -7,18 +7,30 @@ import numpy as np
 from airfoil_module import CST
 
 def create_displacement_step(current_Step, prev_Step, span, chord,
-                             deltaz, Au, Al):
+                             deltaz, Au, Al, spar_x_coordinate):
 
     a = mdb.models['Model-1'].rootAssembly
     p = mdb.models['Model-1'].parts['wing_structure']
 
     mdb.models['Model-1'].StaticStep(name=current_Step, previous=prev_Step)
-    mdb.models['Model-1'].loads['Pressure'].deactivate(current_Step)
 
+    # Deactivating loads and BC's
+    mdb.models['Model-1'].loads['Pressure'].deactivate(current_Step)
+    mdb.models['Model-1'].boundaryConditions['BC-Encastre'].deactivate(
+        'Morphing displacement')
     # fake morphing (quadratic, both with same coefficient)
-    x = np.linspace(0,0.36,100)
-    A = 0.04/(chord+1)
-    displacement = A*(x**2+x)
+    x_box = np.linspace(spar_x_coordinate[0], spar_x_coordinate[1], 20)
+    x_after = np.linspace(spar_x_coordinate[1], chord, 80)
+    x = np.array(list(x_box) + list(x_after))
+
+    # Calculating displacement
+    A = 0.04*chord/(chord**2 + chord - spar_x_coordinate[1]**2 -
+                    spar_x_coordinate[1])
+    B = -A*(spar_x_coordinate[1]**2 + spar_x_coordinate[1])
+    displacement_box = np.linspace(0,0,20)
+    displacement_after = A*(x_after**2+x_after)
+    displacement = np.array(list(displacement_box) + list(displacement_after))
+
     y = CST(x, chord, deltaz, Au, Al)
     x = list(x) + list(x[-2::-1])
     y = list(y['u'][::-1]) + list(y['l'])

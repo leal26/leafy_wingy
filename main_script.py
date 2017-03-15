@@ -6,10 +6,16 @@ from displacement_module import create_displacement_step
 from materials import Materials, aluminum
 from airfoil_module import CST, create_x
 from xfoil_module import create_input
+
+from abaqus import *
+from abaqusConstants import *
+from caeModules import *
+from driverUtils import executeOnCaeStartup
+executeOnCaeStartup()
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # PARAMETERS
 # Wing parameters
-span = .1
+span = .02
 chord = 1.
 velocity = 20.
 aoa = 2.
@@ -44,8 +50,8 @@ SMA_properties = Materials['TiNiCu-M+']
 venation_properties = aluminum(aluminum_type, aluminum_thickness)
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # DESIGN VARIABLES
-kill_distance = 0.1
-growth_distance = 0.1
+kill_distance = 0.075
+growth_distance = 0.075
 grid_size = 100
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -71,22 +77,28 @@ create_aerodynamic_step(airfoil_x, airfoil_y, velocity, altitude, aoa, chord,
                         span, Step1)
 print 'Created aerodynamic step!'
 # Displacement module
-create_displacement_step(Step2, Step1, span, chord, deltaz, Au, Al)
+create_displacement_step(Step2, Step1, span, chord, deltaz, Au, Al,
+                         spar_x_coordinate)
 print 'Created displacement step!'
+
+# Mesh it
+p = mdb.models['Model-1'].parts['wing_structure']
+p.seedPart(size=span, deviationFactor=0.1, minSizeFactor=0.1)
+p.generateMesh()
 
 # Check for lock files
 if os.access('%s.lck'% JobName,os.F_OK):
     os.remove('%s.lck'% JobName)
 
 # Create job and submit
-job = mdb.Job(name=JobName, model=ModelName, description='', type=RESTART,
+mdb.Job(name='Job-1', model='Model-1', description='', type=ANALYSIS,
     atTime=None, waitMinutes=0, waitHours=0, queue=None, memory=90,
     memoryUnits=PERCENTAGE, getMemoryFromAnalysis=True,
     explicitPrecision=SINGLE, nodalOutputPrecision=SINGLE, echoPrint=OFF,
-    modelPrint=OFF, contactPrint=OFF, historyPrint=OFF,
-    scratch='',  parallelizationMethodExplicit=DOMAIN, numDomains=4, activateLoadBalancing=False,
-    multiprocessingMode=DEFAULT, numCpus=4)
-
+    modelPrint=OFF, contactPrint=OFF, historyPrint=OFF, userSubroutine='',
+    scratch='', resultsFormat=ODB, multiprocessingMode=DEFAULT, numCpus=4,
+    numDomains=4, numGPUs=0)
+BREAK
 job.submit()
 job.waitForCompletion()
 

@@ -12,8 +12,6 @@ import numpy as np
 from abaqus import *
 from abaqusConstants import *
 from caeModules import *
-from driverUtils import executeOnCaeStartup
-executeOnCaeStartup()
 
 def generate_module(Au, Al, deltaz, spar_x_coordinate, chord, span,
                  aluminum_type, venation_type, aluminum_thickness,
@@ -70,11 +68,10 @@ def generate_module(Au, Al, deltaz, spar_x_coordinate, chord, span,
     p = mdb.models['Model-1'].parts['wing_structure']
     a.Instance(name='wing_structure-1', part=p, dependent=ON)
 
-    # Create mesh
-    p.generateMesh()
-
     #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     # SURFACES AND SETS
+    # Modify wing_data to include OML points for Set-Spars
+    # INSERT SPAR POINTS
     # Surface for Outer Mold Line
     f = p.faces
     pickedRegions = enhanced_findAt(f, wing_data['x'], wing_data['y'],
