@@ -1,4 +1,5 @@
 import subprocess as sp
+import time
 
 from xfoil_module import output_reader
 
@@ -50,13 +51,17 @@ def generate_venation(kill_distance, growth_distance, grid_size,
     # From stdin
     ps.stdin.close()
     # From popen
-    ps.wait()
+    #ps.wait()
+    time.sleep(10)
+    ps.kill()
 
-if __name__ == '__main__':
-    generate_venation(.01, .01, 10, plot=True)
 
     header = ['element', 'x1', 'y1', 'x2', 'y2']
     structure = [['element'], ['x1', 'y1'], ['x2', 'y2']]
     Data = output_reader('edges.txt', header = header, structure = structure)
+    return Data
+
+if __name__ == '__main__':
+    print generate_venation(.1, .1, 10, plot=True)
 
     # generate_venation(Data)
