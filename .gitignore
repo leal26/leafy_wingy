@@ -45,3 +45,23 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# Abaqus files
+*.odb
+*.rpy
+*.rpy.*
+*.rpy*
+*.rec*
+*.rec.*
+*.rec
+/*.rec
+/*.rpy
+/*.rpy.*
+*.com
+*.dat
+*.inp
+*.msg
+*.prt
+*.sim
+*.sta
+*.pyc

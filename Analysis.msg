@@ -1,6 +1,6 @@
 1
 
-   Abaqus 6.14-2                                  Date 15-Mar-2017   Time 19:24:22
+   Abaqus 6.14-2                                  Date 15-Mar-2017   Time 19:30:10
    For use at TEXAS A _ M UNIVERSITY SYSTEM under license from Dassault Systemes or its subsidiary.
 
                                                                                  
@@ -174,7 +174,7 @@
 
 
  AVERAGE FORCE                      3.903E-02   TIME AVG. FORCE       3.903E-02
- LARGEST RESIDUAL FORCE            -7.805E-02   AT NODE        228   DOF  3
+ LARGEST RESIDUAL FORCE             7.805E-02   AT NODE        221   DOF  3
    INSTANCE: WING_STRUCTURE-1                                                                
  LARGEST INCREMENT OF DISP.         3.792E-03   AT NODE         56   DOF  2
    INSTANCE: WING_STRUCTURE-1                                                                
@@ -199,16 +199,16 @@
 
      CHECK POINT  END OF SOLVER       
 
-       ELAPSED USER TIME (SEC)      =  0.10000    
+       ELAPSED USER TIME (SEC)      =   0.0000    
        ELAPSED SYSTEM TIME (SEC)    =   0.0000    
-       ELAPSED TOTAL CPU TIME (SEC) =  0.10000    
+       ELAPSED TOTAL CPU TIME (SEC) =   0.0000    
        ELAPSED WALLCLOCK TIME (SEC) =          0
 
                CONVERGENCE CHECKS FOR EQUILIBRIUM ITERATION     3
 
 
  AVERAGE FORCE                      3.993E-02   TIME AVG. FORCE       3.993E-02
- LARGEST RESIDUAL FORCE             0.120       AT NODE        234   DOF  3
+ LARGEST RESIDUAL FORCE            -0.120       AT NODE        237   DOF  3
    INSTANCE: WING_STRUCTURE-1                                                                
  LARGEST INCREMENT OF DISP.         3.872E-03   AT NODE         56   DOF  2
    INSTANCE: WING_STRUCTURE-1                                                                
@@ -234,16 +234,16 @@
 
      CHECK POINT  END OF SOLVER       
 
-       ELAPSED USER TIME (SEC)      =   0.0000    
+       ELAPSED USER TIME (SEC)      =  0.10000    
        ELAPSED SYSTEM TIME (SEC)    =   0.0000    
-       ELAPSED TOTAL CPU TIME (SEC) =   0.0000    
+       ELAPSED TOTAL CPU TIME (SEC) =  0.10000    
        ELAPSED WALLCLOCK TIME (SEC) =          0
 
                CONVERGENCE CHECKS FOR EQUILIBRIUM ITERATION     4
 
 
  AVERAGE FORCE                      4.027E-02   TIME AVG. FORCE       4.027E-02
- LARGEST RESIDUAL FORCE            -9.232E-07   AT NODE        236   DOF  3
+ LARGEST RESIDUAL FORCE            -9.245E-07   AT NODE        236   DOF  3
    INSTANCE: WING_STRUCTURE-1                                                                
  LARGEST INCREMENT OF DISP.         3.872E-03   AT NODE         56   DOF  2
    INSTANCE: WING_STRUCTURE-1                                                                
@@ -267,7 +267,7 @@
  STEP TIME COMPLETED        1.00    ,  TOTAL TIME COMPLETED         1.00    
 1
 
-   Abaqus 6.14-2                                  Date 15-Mar-2017   Time 19:24:22
+   Abaqus 6.14-2                                  Date 15-Mar-2017   Time 19:30:10
    For use at TEXAS A _ M UNIVERSITY SYSTEM under license from Dassault Systemes or its subsidiary.
 
                                                                                  
@@ -393,23 +393,23 @@
 
      CHECK POINT  END OF SOLVER       
 
-       ELAPSED USER TIME (SEC)      =  0.10000    
-       ELAPSED SYSTEM TIME (SEC)    =   0.0000    
+       ELAPSED USER TIME (SEC)      =   0.0000    
+       ELAPSED SYSTEM TIME (SEC)    =  0.10000    
        ELAPSED TOTAL CPU TIME (SEC) =  0.10000    
        ELAPSED WALLCLOCK TIME (SEC) =          0
  
 
  ***WARNING: SOLVER PROBLEM. NUMERICAL SINGULARITY WHEN PROCESSING NODE 
-             WING_STRUCTURE-1.17 D.O.F. 1 RATIO = 533.444E+12  .
+             WING_STRUCTURE-1.17 D.O.F. 1 RATIO = 733.604E+12  .
  
 
  ***WARNING: SOLVER PROBLEM. NUMERICAL SINGULARITY WHEN PROCESSING NODE 
-             WING_STRUCTURE-1.17 D.O.F. 3 RATIO = 281.319E+12  .
+             WING_STRUCTURE-1.17 D.O.F. 3 RATIO = 1.14886E+15.
 
                CONVERGENCE CHECKS FOR EQUILIBRIUM ITERATION     1
 
 
- AVERAGE FORCE                       8.04       TIME AVG. FORCE        8.04    
+ AVERAGE FORCE                       8.05       TIME AVG. FORCE        8.05    
  LARGEST RESIDUAL FORCE             -83.0       AT NODE         42   DOF  1
    INSTANCE: WING_STRUCTURE-1                                                                
  LARGEST INCREMENT OF DISP.          10.0       AT NODE        127   DOF  2
@@ -418,7 +418,7 @@
    INSTANCE: WING_STRUCTURE-1                                                                
           FORCE     EQUILIBRIUM NOT ACHIEVED WITHIN TOLERANCE.
 
- AVERAGE MOMENT                     6.440E-04   TIME AVG. MOMENT      6.440E-04
+ AVERAGE MOMENT                     6.443E-04   TIME AVG. MOMENT      6.443E-04
  LARGEST RESIDUAL MOMENT            4.504E-03   AT NODE        238   DOF  6
    INSTANCE: WING_STRUCTURE-1                                                                
  LARGEST INCREMENT OF ROTATION     -1.222E-02   AT NODE        238   DOF  6
@@ -438,21 +438,21 @@
        ELAPSED USER TIME (SEC)      =   0.0000    
        ELAPSED SYSTEM TIME (SEC)    =   0.0000    
        ELAPSED TOTAL CPU TIME (SEC) =   0.0000    
-       ELAPSED WALLCLOCK TIME (SEC) =          1
+       ELAPSED WALLCLOCK TIME (SEC) =          0
  
 
  ***WARNING: SOLVER PROBLEM. NUMERICAL SINGULARITY WHEN PROCESSING NODE 
-             WING_STRUCTURE-1.17 D.O.F. 1 RATIO = 1.24470E+15.
+             WING_STRUCTURE-1.17 D.O.F. 1 RATIO = 1.63182E+15.
  
 
  ***WARNING: SOLVER PROBLEM. NUMERICAL SINGULARITY WHEN PROCESSING NODE 
-             WING_STRUCTURE-1.17 D.O.F. 3 RATIO = 1.03890E+15.
+             WING_STRUCTURE-1.17 D.O.F. 3 RATIO = 367.648E+12  .
 
                CONVERGENCE CHECKS FOR EQUILIBRIUM ITERATION     2
 
 
  AVERAGE FORCE                      4.689E-04   TIME AVG. FORCE       4.689E-04
- LARGEST RESIDUAL FORCE             9.488E-03   AT NODE        104   DOF  3
+ LARGEST RESIDUAL FORCE             9.489E-03   AT NODE        104   DOF  3
    INSTANCE: WING_STRUCTURE-1                                                                
  LARGEST INCREMENT OF DISP.          10.0       AT NODE        127   DOF  2
    INSTANCE: WING_STRUCTURE-1                                                                
@@ -465,7 +465,7 @@
    INSTANCE: WING_STRUCTURE-1                                                                
  LARGEST INCREMENT OF ROTATION     -1.222E-02   AT NODE        233   DOF  6
    INSTANCE: WING_STRUCTURE-1                                                                
- LARGEST CORRECTION TO ROTATION    -9.680E-05   AT NODE        364   DOF  6
+ LARGEST CORRECTION TO ROTATION    -9.680E-05   AT NODE        363   DOF  6
    INSTANCE: WING_STRUCTURE-1                                                                
           MOMENT    EQUILIBRIUM NOT ACHIEVED WITHIN TOLERANCE.
 
@@ -478,23 +478,23 @@
      CHECK POINT  END OF SOLVER       
 
        ELAPSED USER TIME (SEC)      =   0.0000    
-       ELAPSED SYSTEM TIME (SEC)    =  0.10000    
-       ELAPSED TOTAL CPU TIME (SEC) =  0.10000    
+       ELAPSED SYSTEM TIME (SEC)    =   0.0000    
+       ELAPSED TOTAL CPU TIME (SEC) =   0.0000    
        ELAPSED WALLCLOCK TIME (SEC) =          0
  
 
  ***WARNING: SOLVER PROBLEM. NUMERICAL SINGULARITY WHEN PROCESSING NODE 
-             WING_STRUCTURE-1.17 D.O.F. 1 RATIO = 1.82595E+15.
+             WING_STRUCTURE-1.17 D.O.F. 1 RATIO = 334.806E+12  .
  
 
  ***WARNING: SOLVER PROBLEM. NUMERICAL SINGULARITY WHEN PROCESSING NODE 
-             WING_STRUCTURE-1.17 D.O.F. 3 RATIO = 95.0848E+12 .
+             WING_STRUCTURE-1.17 D.O.F. 3 RATIO = 270.471E+12  .
 
                CONVERGENCE CHECKS FOR EQUILIBRIUM ITERATION     3
 
 
  AVERAGE FORCE                      2.706E-04   TIME AVG. FORCE       2.706E-04
- LARGEST RESIDUAL FORCE             2.912E-05   AT NODE         56   DOF  1
+ LARGEST RESIDUAL FORCE             2.927E-05   AT NODE         53   DOF  1
    INSTANCE: WING_STRUCTURE-1                                                                
  LARGEST INCREMENT OF DISP.          10.0       AT NODE        132   DOF  2
    INSTANCE: WING_STRUCTURE-1                                                                
@@ -503,11 +503,11 @@
           FORCE     EQUILIBRIUM NOT ACHIEVED WITHIN TOLERANCE.
 
  AVERAGE MOMENT                     1.418E-05   TIME AVG. MOMENT      1.418E-05
- LARGEST RESIDUAL MOMENT           -8.071E-10   AT NODE         61   DOF  4
+ LARGEST RESIDUAL MOMENT            2.029E-09   AT NODE         58   DOF  4
    INSTANCE: WING_STRUCTURE-1                                                                
  LARGEST INCREMENT OF ROTATION     -1.222E-02   AT NODE        233   DOF  6
    INSTANCE: WING_STRUCTURE-1                                                                
- LARGEST CORRECTION TO ROTATION     6.003E-06   AT NODE         53   DOF  6
+ LARGEST CORRECTION TO ROTATION     6.008E-06   AT NODE         56   DOF  6
    INSTANCE: WING_STRUCTURE-1                                                                
           THE MOMENT    EQUILIBRIUM EQUATIONS HAVE CONVERGED
 
@@ -526,30 +526,30 @@
  
 
  ***WARNING: SOLVER PROBLEM. NUMERICAL SINGULARITY WHEN PROCESSING NODE 
-             WING_STRUCTURE-1.17 D.O.F. 1 RATIO = 450.532E+12  .
+             WING_STRUCTURE-1.17 D.O.F. 1 RATIO = 1.61910E+15.
  
 
  ***WARNING: SOLVER PROBLEM. NUMERICAL SINGULARITY WHEN PROCESSING NODE 
-             WING_STRUCTURE-1.17 D.O.F. 3 RATIO = 178.471E+12  .
+             WING_STRUCTURE-1.17 D.O.F. 3 RATIO = 396.873E+12  .
 
                CONVERGENCE CHECKS FOR EQUILIBRIUM ITERATION     4
 
 
  AVERAGE FORCE                      2.705E-04   TIME AVG. FORCE       2.705E-04
- LARGEST RESIDUAL FORCE             3.357E-07   AT NODE        348   DOF  2
+ LARGEST RESIDUAL FORCE             3.042E-07   AT NODE         59   DOF  3
    INSTANCE: WING_STRUCTURE-1                                                                
  LARGEST INCREMENT OF DISP.          10.0       AT NODE        132   DOF  2
    INSTANCE: WING_STRUCTURE-1                                                                
- LARGEST CORRECTION TO DISP.        1.703E-10   AT NODE         56   DOF  2
+ LARGEST CORRECTION TO DISP.        1.704E-10   AT NODE         53   DOF  2
    INSTANCE: WING_STRUCTURE-1                                                                
           THE FORCE     EQUILIBRIUM EQUATIONS HAVE CONVERGED
 
  AVERAGE MOMENT                     1.418E-05   TIME AVG. MOMENT      1.418E-05
- LARGEST RESIDUAL MOMENT            6.498E-10   AT NODE         69   DOF  4
+ LARGEST RESIDUAL MOMENT           -4.768E-10   AT NODE         79   DOF  4
    INSTANCE: WING_STRUCTURE-1                                                                
  LARGEST INCREMENT OF ROTATION     -1.222E-02   AT NODE        233   DOF  6
    INSTANCE: WING_STRUCTURE-1                                                                
- LARGEST CORRECTION TO ROTATION    -9.802E-10   AT NODE         56   DOF  6
+ LARGEST CORRECTION TO ROTATION    -9.808E-10   AT NODE         56   DOF  6
    INSTANCE: WING_STRUCTURE-1                                                                
           THE MOMENT    EQUILIBRIUM EQUATIONS HAVE CONVERGED
 
@@ -583,7 +583,7 @@
 
 
      JOB TIME SUMMARY
-       USER TIME (SEC)      =  0.80000    
-       SYSTEM TIME (SEC)    =  0.30000    
-       TOTAL CPU TIME (SEC) =   1.1000    
-       WALLCLOCK TIME (SEC) =          1
+       USER TIME (SEC)      =  0.70000    
+       SYSTEM TIME (SEC)    =  0.20000    
+       TOTAL CPU TIME (SEC) =  0.90000    
+       WALLCLOCK TIME (SEC) =          0
