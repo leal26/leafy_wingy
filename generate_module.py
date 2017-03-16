@@ -71,7 +71,20 @@ def generate_module(Au, Al, deltaz, spar_x_coordinate, chord, span,
     #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     # SURFACES AND SETS
     # Modify wing_data to include OML points for Set-Spars
-    # INSERT SPAR POINTS
+    # Start from back because if I add compnents to the list at the beginning
+    # it will change the index for everything.
+    for i in range(len(wing_data['x'])-2, -1, -1):
+        for j in range(len(spar_x_coordinate)):
+            # If on upper surface, the previous point will have greater x and
+            # the point after will be smaller
+            if spar_x_coordinate[j] < wing_data['x'][i] and spar_x_coordinate[j] > wing_data['x'][i+1]:
+                wing_data['x'].insert(i+1, spar_x_coordinate[j])
+                wing_data['y'].insert(i+1, spar_y_coordinate['u'][j])
+                wing_data['z'].insert(i+1, 0)
+            elif spar_x_coordinate[j] > wing_data['x'][i] and spar_x_coordinate[j] < wing_data['x'][i+1]:
+                wing_data['x'].insert(i+1, spar_x_coordinate[j])
+                wing_data['y'].insert(i+1, spar_y_coordinate['l'][j])
+                wing_data['z'].insert(i+1, 0)
     # Surface for Outer Mold Line
     f = p.faces
     pickedRegions = enhanced_findAt(f, wing_data['x'], wing_data['y'],
@@ -79,11 +92,23 @@ def generate_module(Au, Al, deltaz, spar_x_coordinate, chord, span,
     p.Surface(side2Faces = pickedRegions, name='Surf-OML')
     p.Set(faces = pickedRegions, name='Set-OML')
 
+    f = a.instances['wing_structure-1'].faces
+    pickedRegions = enhanced_findAt(f, wing_data['x'], wing_data['y'],
+                                    wing_data['z'], coordinate_type = 'face_nodes')
+    a.Set(faces = pickedRegions, name='Set-OML')
+
     # Set for internal Venation structure
+    f = p.faces
     pickedRegions = enhanced_findAt(f, venation_data['x'], venation_data['y'],
                                     venation_data['z'], coordinate_type = 'face_nodes',
                                     ratio = 1.)
     p.Set(faces = pickedRegions, name='Set-Venation-Structure')
+
+    f = a.instances['wing_structure-1'].faces
+    pickedRegions = enhanced_findAt(f, venation_data['x'], venation_data['y'],
+                                    venation_data['z'], coordinate_type = 'face_nodes',
+                                    ratio = 1.)
+    a.Set(faces = pickedRegions, name='Set-Venation-Structure')
 
     # Set for Main box
     camber_y_coordinate = [(spar_y_coordinate['u'][0]-spar_y_coordinate['l'][0])/2.,
@@ -96,7 +121,7 @@ def generate_module(Au, Al, deltaz, spar_x_coordinate, chord, span,
                       (spar_y_coordinate['u'][1] + camber_y_coordinate[1])/2.,
                       (spar_y_coordinate['l'][1] + camber_y_coordinate[1])/2.],
                  'z':[span/2., span/2., span/2., span/2.]}
-
+    f = p.faces
     pickedRegions = enhanced_findAt(f, spar_data['x'], spar_data['y'],
                                     spar_data['z'], coordinate_type = 'face_nodes',
                                     ratio = 1.)

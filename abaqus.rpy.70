@@ -1,0 +1,47 @@
+# -*- coding: mbcs -*-
+#
+# Abaqus/CAE Release 6.14-2 replay file
+# Internal Version: 2014_08_22-09.00.46 134497
+# Run by leal26 on Wed Mar 15 19:19:05 2017
+#
+
+# from driverUtils import executeOnCaeGraphicsStartup
+# executeOnCaeGraphicsStartup()
+#: Executing "onCaeGraphicsStartup()" in the site directory ...
+#: Warning: Permission was denied for "abaqus.rpy"; "abaqus.rpy.70" will be used for this session's replay file.
+from abaqus import *
+from abaqusConstants import *
+session.Viewport(name='Viewport: 1', origin=(0.0, 0.0), width=234.129150390625, 
+    height=264.936126708984)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].maximize()
+from caeModules import *
+from driverUtils import executeOnCaeStartup
+executeOnCaeStartup()
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=ON)
+o1 = session.openOdb(
+    name='C:/Users/leal26/Documents/GitHub/leafy_wingy/Analysis.odb')
+session.viewports['Viewport: 1'].setValues(displayedObject=o1)
+#: Model: C:/Users/leal26/Documents/GitHub/leafy_wingy/Analysis.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             1
+#: Number of Element Sets:       7
+#: Number of Node Sets:          8
+#: Number of Steps:              2
+cliCommand("""from abaqus_tools import get_displacement, find_maxMises""")
+cliCommand("""JobName = 'Analysis'""")
+cliCommand("""ModelName = 'wing_structure'""")
+cliCommand("""Step1 = 'Aerodynamic loading'""")
+cliCommand("""Step2 = 'Morphing displacement'""")
+cliCommand("""max_stress_venation = find_maxMises(JobName, Step2, 'Set-Venation-Structure')""")
+#: Warning: The database has been opened with readOnly flag on. It will remain readOnly.
+#: {' ALL ELEMENTS': 'OdbSet object', 'SET-VENATION-STRUCTURE': 'OdbSet object'}
+#: An assembly level elset named Set-Venation-Structure doesnot exist in the output database Analysis.odb
+#* Exit code: 0
+#* File "C:\Users\leal26\Documents\GitHub\abaqus_tools\abaqus_tools.py", line 
+#* 165, in find_maxMises
+#*     exit(0)
+#* File "SMAPython\SMAPytLibPy.m\src\site.py", line 481, in __call__

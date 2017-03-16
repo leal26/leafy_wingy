@@ -28,7 +28,7 @@ def create_displacement_step(current_Step, prev_Step, span, chord,
                     spar_x_coordinate[1])
     B = -A*(spar_x_coordinate[1]**2 + spar_x_coordinate[1])
     displacement_box = np.linspace(0,0,20)
-    displacement_after = A*(x_after**2+x_after)
+    displacement_after = -A*(x_after**2+x_after)
     displacement = np.array(list(displacement_box) + list(displacement_after))
 
     y = CST(x, chord, deltaz, Au, Al)
@@ -49,6 +49,6 @@ def create_displacement_step(current_Step, prev_Step, span, chord,
         fieldDataType=SCALAR, xyzPointData=displacement_field)
     region = a.instances['wing_structure-1'].sets['Set-OML']
     mdb.models['Model-1'].DisplacementBC(name='Displacement', createStepName=current_Step,
-        region=region, u1=UNSET, u2=1.0, u3=UNSET, ur1=UNSET, ur2=UNSET, ur3=UNSET,
+        region=region, u1=UNSET, u2=10.0, u3=UNSET, ur1=UNSET, ur2=UNSET, ur3=UNSET,
         amplitude=UNSET, fixed=OFF, distributionType=UNIFORM, fieldName='',
         localCsys=None)

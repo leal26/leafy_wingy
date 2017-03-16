@@ -2,10 +2,15 @@ Abaqus JOB Job-1
 Abaqus 6.14-2
 Abaqus License Manager checked out the following licenses:
 Abaqus/Standard checked out 8 tokens from Flexnet server license.engr.tamu.edu.
-<174 out of 200 licenses remain available>.
+<170 out of 200 licenses remain available>.
 Begin Analysis Input File Processor
-3/15/2017 4:10:58 PM
+3/15/2017 5:20:11 PM
 Run pre.exe
-3/15/2017 4:11:03 PM
-Abaqus Error: Analysis Input File Processor exited with an error.
-Abaqus/Analysis exited with errors
+3/15/2017 5:20:16 PM
+End Analysis Input File Processor
+Begin Abaqus/Standard Analysis
+3/15/2017 5:20:16 PM
+Run standard.exe
+3/15/2017 5:20:21 PM
+End Abaqus/Standard Analysis
+Abaqus JOB Job-1 COMPLETED

@@ -6,7 +6,7 @@ from displacement_module import create_displacement_step
 from materials import Materials, aluminum
 from airfoil_module import CST, create_x
 from xfoil_module import create_input
-
+from abaqus_tools import get_displacement, find_maxMises
 from abaqus import *
 from abaqusConstants import *
 from caeModules import *
@@ -91,15 +91,24 @@ if os.access('%s.lck'% JobName,os.F_OK):
     os.remove('%s.lck'% JobName)
 
 # Create job and submit
-mdb.Job(name='Job-1', model='Model-1', description='', type=ANALYSIS,
+job = mdb.Job(name=JobName, model='Model-1', description='', type=ANALYSIS,
     atTime=None, waitMinutes=0, waitHours=0, queue=None, memory=90,
     memoryUnits=PERCENTAGE, getMemoryFromAnalysis=True,
     explicitPrecision=SINGLE, nodalOutputPrecision=SINGLE, echoPrint=OFF,
     modelPrint=OFF, contactPrint=OFF, historyPrint=OFF, userSubroutine='',
     scratch='', resultsFormat=ODB, multiprocessingMode=DEFAULT, numCpus=4,
     numDomains=4, numGPUs=0)
-BREAK
+
+mdb.saveAs(
+    pathName='C:/Users/leal26/Documents/GitHub/leafy_wingy/wing_model.cae')
+
 job.submit()
 job.waitForCompletion()
 
-TE_displacement = get_displacement(JobName + '.odb', StepName)
+# Getting data out of it
+TE_displacement = get_displacement(JobName + '.odb', Step1)
+print 'Trailing Edge displacement: ', TE_displacement
+max_stress_venation = find_maxMises(JobName, Step2, 'Set-Venation-Structure'.upper())
+max_stress_OML = find_maxMises(JobName, Step2, 'Set-OML'.upper())
+max_stress = max(max_stress_OML, max_stress_venation)
+print 'Max stress: ', max_stress

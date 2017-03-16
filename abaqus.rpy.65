@@ -1,0 +1,64 @@
+# -*- coding: mbcs -*-
+#
+# Abaqus/CAE Release 6.14-2 replay file
+# Internal Version: 2014_08_22-09.00.46 134497
+# Run by leal26 on Wed Mar 15 18:37:11 2017
+#
+
+# from driverUtils import executeOnCaeGraphicsStartup
+# executeOnCaeGraphicsStartup()
+#: Executing "onCaeGraphicsStartup()" in the site directory ...
+from abaqus import *
+from abaqusConstants import *
+session.Viewport(name='Viewport: 1', origin=(0.0, 0.0), width=234.129150390625, 
+    height=264.936126708984)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].maximize()
+from caeModules import *
+from driverUtils import executeOnCaeStartup
+executeOnCaeStartup()
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=ON)
+execfile('main_script.py', __main__.__dict__)
+#: A new model database has been created.
+#: The model "Model-1" has been created.
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+#: 0.075000
+#: 0.075000
+#: 100.000000
+#: Genarated Venation structure!
+#: 0.1 0.0510503734588 0.01
+#: 0.3 0.0676998473523 0.01
+#: 0.5 0.0615813734782 0.01
+#: 0.7 0.0434898559548 0.01
+#: 0.12 0.0545943593459 0.01
+#: 0.35 0.0676473941395 0.01
+#: 0.6 0.0537238509479 0.01
+#: 0.8 0.0312699387798 0.01
+#: 0.1 -0.0277981458236 0.01
+#* Feature creation failed.
+#* File "main_script.py", line 72, in <module>
+#*     venation_properties, x_u1, x_u2, x_l1, x_l2, datafile)
+#* File "C:\Users\leal26\Documents\GitHub\leafy_wingy\generate_module.py", line 
+#* 63, in generate_module
+#*     enhanced_partition(p, x_partitions, y_partitions, z_partitions)
+#* File 
+#* "C:\Users\leal26\Documents\GitHub\abaqus_tools\structure_generation.py", 
+#* line 191, in enhanced_partition
+#*     faces=pickedFaces)
+p1 = mdb.models['Model-1'].parts['wing_structure']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+session.viewports['Viewport: 1'].view.setValues(session.views['Front'])
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.97124, 
+    farPlane=2.05261, width=0.408938, height=0.198363, viewOffsetX=-0.246068, 
+    viewOffsetY=0.00847538)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.97297, 
+    farPlane=2.05088, width=0.409297, height=0.198537, cameraPosition=(0.49976, 
+    0.015113, 2.02193), cameraUpVector=(0.0176721, 0.999844, 0), cameraTarget=(
+    0.49976, 0.015113, 0.00999999), viewOffsetX=-0.246283, 
+    viewOffsetY=0.00848282)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.76478, 
+    farPlane=2.67803, width=0.366107, height=0.177587, cameraPosition=(
+    -1.29012, 0.301441, 1.30153), cameraUpVector=(0.213146, 0.97617, 
+    0.0407552), cameraTarget=(0.376973, -0.0174672, 0.221275), 
+    viewOffsetX=-0.220295, viewOffsetY=0.0075877)
