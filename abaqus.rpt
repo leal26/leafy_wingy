@@ -1,0 +1,20 @@
+********************************************************************************
+Probe Values Report, written on Wed Mar 29 18:59:25 2017
+
+Source
+-------
+
+   ODB: C:/Users/leal26/Documents/GitHub/leafy_wingy/Analysis.odb
+   Step: Aerodynamic loading
+   Frame: Increment      1: Step Time =    1.000
+   Variable: U, Magnitude
+
+Loc 1 : Integration point values
+
+Probe values reported at integration points
+
+  Part Instance  Element ID        Type  Attached nodes
+--------------------------------------------------------------------------------
+  WING_STRUCTURE-1       10214         S4R       19266        1526        1527       19267
+
+

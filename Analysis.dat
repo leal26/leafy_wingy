@@ -1,6 +1,6 @@
 1
 
-   Abaqus 6.14-2                                  Date 15-Mar-2017   Time 19:30:06
+   Abaqus 6.14-2                                  Date 29-Mar-2017   Time 18:49:58
    For use at TEXAS A _ M UNIVERSITY SYSTEM under license from Dassault Systemes or its subsidiary.
 
 
@@ -84,43 +84,28 @@
   *Heading
   *Node
   *Element, type=S4R
+  *Nset, nset=ASSEMBLY_WING_STRUCTURE-1_SET-ALL
   *Nset, nset=ASSEMBLY_WING_STRUCTURE-1_SET-OML
   *Nset, nset=ASSEMBLY_WING_STRUCTURE-1_SET-OML-ALUMINUM
   *Nset, nset=ASSEMBLY_WING_STRUCTURE-1_SET-SMA
   *Nset, nset=ASSEMBLY_WING_STRUCTURE-1_SET-SPARS
-  *Nset, nset=ASSEMBLY_WING_STRUCTURE-1_SET-VENATION-STRUCTURE
+  *Elset, elset=ASSEMBLY_WING_STRUCTURE-1_SET-ALL
   *Elset, elset=ASSEMBLY_WING_STRUCTURE-1_SET-OML
   *Elset, elset=ASSEMBLY_WING_STRUCTURE-1_SET-OML-ALUMINUM
   *Elset, elset=ASSEMBLY_WING_STRUCTURE-1_SET-SMA
   *Elset, elset=ASSEMBLY_WING_STRUCTURE-1_SET-SPARS
-  *Elset, elset=ASSEMBLY_WING_STRUCTURE-1_SET-VENATION-STRUCTURE
-  *Elset, elset=ASSEMBLY_WING_STRUCTURE-1__I2
   *Elset, elset=ASSEMBLY_WING_STRUCTURE-1__SURF-OML_SNEG
   *Nset, nset=ASSEMBLY_SET-OML
-  *Nset, nset=ASSEMBLY_SET-VENATION-STRUCTURE
   *Nset, nset=ASSEMBLY_TIPNODE
   *Elset, elset=ASSEMBLY_SET-OML
-  *Elset, elset=ASSEMBLY_SET-VENATION-STRUCTURE
   *surface, type=ELEMENT, name=ASSEMBLY_WING_STRUCTURE-1_SURF-OML
   *surface, type=ELEMENT, name=ASSEMBLY_WING_STRUCTURE-1_SURF-OML
-  *material, name=AL-2024
+  *material, name=ABS
   *density
   *elastic
-  *material, name=AL-6061
-  *density
-  *elastic
-  *material, name=SMA
-  *density
-  *elastic
-  *shellsection, elset=ASSEMBLY_WING_STRUCTURE-1_SET-SMA, material=SMA
-  *shellsection, elset=ASSEMBLY_WING_STRUCTURE-1__I2, material=AL-2024
-  *shellsection, elset=ASSEMBLY_WING_STRUCTURE-1_SET-VENATION-STRUCTURE, material=AL-6061
-  *shellsection, elset=ASSEMBLY_WING_STRUCTURE-1_SET-SPARS, material=AL-6061
+  *shellsection, elset=ASSEMBLY_WING_STRUCTURE-1_SET-ALL, material=ABS
   *boundary
-  *shellsection, elset=ASSEMBLY_WING_STRUCTURE-1_SET-SMA, material=SMA
-  *shellsection, elset=ASSEMBLY_WING_STRUCTURE-1__I2, material=AL-2024
-  *shellsection, elset=ASSEMBLY_WING_STRUCTURE-1_SET-VENATION-STRUCTURE, material=AL-6061
-  *shellsection, elset=ASSEMBLY_WING_STRUCTURE-1_SET-SPARS, material=AL-6061
+  *shellsection, elset=ASSEMBLY_WING_STRUCTURE-1_SET-ALL, material=ABS
   *surface, type=ELEMENT, name=ASSEMBLY_WING_STRUCTURE-1_SURF-OML
   *output, field, variable=PRESELECT
   *output, history, variable=PRESELECT
@@ -128,20 +113,10 @@
   *output, history, variable=PRESELECT
   *output, field, variable=PRESELECT
   *output, history, variable=PRESELECT
-  *output, field, variable=PRESELECT
-  *output, history, variable=PRESELECT
-  *output, field, variable=PRESELECT
-  *output, history, variable=PRESELECT
-  *output, field, variable=PRESELECT
-  *output, history, variable=PRESELECT
   *Step, name="Aerodynamic loading", nlgeom=YES
   *output, field, variable=PRESELECT
   *output, history, variable=PRESELECT
-  *Step, name="Morphing displacement", nlgeom=YES
-  *output, field, variable=PRESELECT
-  *output, history, variable=PRESELECT
   *Step, name="Aerodynamic loading", nlgeom=YES
-  *Step, name="Morphing displacement", nlgeom=YES
   *Step, name="Aerodynamic loading", nlgeom=YES
   *static
   *boundary
@@ -149,33 +124,79 @@
   *output, field, variable=PRESELECT
   *output, history, variable=PRESELECT
   *endstep
-  *Step, name="Morphing displacement", nlgeom=YES
-  *static
-  *boundary, op=NEW
-  *boundary, op=NEW
-  *dload, op=NEW
-  *output, field, variable=PRESELECT
-  *output, history, variable=PRESELECT
-  *endstep
   *Step, name="Aerodynamic loading", nlgeom=YES
   *static
   *boundary
   *endstep
-  *Step, name="Morphing displacement", nlgeom=YES
-  *static
-  *boundary, op=NEW
-  *boundary, op=NEW
-  *endstep
+  
+                               E L E M E N T   Q U A L I T Y  C H E C K S        
+  
+  
+ ***NOTES: DISTORTED ISOPARAMETRIC ELEMENTS: ANGLE BETWEEN ISOPARAMETRIC LINES 
+           IS LESS THAN 45 DEGREES OR GREATER THAN 135 DEGREES.
+  
+           TETRAHEDRAL QUALITY MEASURE: VOLUME OF TETRAHEDRON DIVIDED BY THE 
+           VOLUME OF EQUILATERAL TETRAHEDRON WITH SAME CIRCUMSPHERE RADIUS; 
+           0 FOR DEGENERATE TETRAHEDRON AND 1 FOR EQUILATERIAL TETRAHEDRON. IT 
+           IS RECOMMENDED THAT THE TETRAHEDRAL QUALITY MEASURE BE GREATER THAN 
+           0.02, THE MIN INTERIOR (DIHEDRAL) ANGLE BE GREATER THAN 10 DEGREES, 
+           AND THE MAX INTERIOR (DIHEDRAL) ANGLE BE LESS THAN 160 DEGREES. 
+  
+           MODIFIED TETRAHEDRAL QUALITY MEASURE: ANGLES BETWEEN THE TWO LINE 
+           SEGMENTS ON EACH EDGE; THE EDGES OF MODIFIED TETRAHEDRAL SHOULD BE 
+           AS STRAIGHT AS POSSIBLE. IT IS RECOMMENDED THAT THE ANGLE BETWEEN 
+           THE TWO LINE SEGMENTS ON EACH EDGE IS BETWEEN 160 AND 180 DEGREES. 
+  
+           TRIANGULAR QUALITY MEASURE: AREA OF TRIANGLE DIVIDED BY THE AREA OF 
+           EQUILATERAL TRIANGLE WITH SAME CIRCUMCIRCLE RADIUS; 0 FOR DEGENERATE 
+           TRIANGLE AND 1 FOR EQUILATERAL TRIANGLE. IT IS RECOMMENDED THAT THE
+           TRIANGULAR QUALITY MEASURE BE GREATER THAN 0.01, THE MIN INTERIOR 
+           ANGLE BE GREATER THAN 10 DEGREES, AND THE MAX INTERIOR ANGLE BE LESS 
+           THAN 160 DEGREES. 
+  
+           NODAL ADJUSTMENTS ARISING FROM CONTACT INTERACTIONS AND/OR TIE 
+           CONSTRAINTS CAN CAUSE SEVERE ELEMENT DISTORTION. IT MAY BE NECESSARY 
+           TO REMESH IN ORDER TO REDUCE THE AMOUNT OF ADJUSTMENT. 
+
+ ***WARNING: The aspect ratio for 20 elements exceeds 100 to 1. The elements 
+             have been identified in element set WarnElemAspectRatio.
+  
+ --------------------------------------------------------------------------------
+ Elements with large aspect ratio
+  
+          Element           Adjusted nodes 
+ -------------------------- -------------- 
+     WING_STRUCTURE-1.10631       NO       
+     WING_STRUCTURE-1.10632       NO       
+     WING_STRUCTURE-1.10633       NO       
+     WING_STRUCTURE-1.10634       NO       
+     WING_STRUCTURE-1.10635       NO       
+     WING_STRUCTURE-1.10636       NO       
+     WING_STRUCTURE-1.10637       NO       
+     WING_STRUCTURE-1.10638       NO       
+     WING_STRUCTURE-1.10639       NO       
+     WING_STRUCTURE-1.10640       NO       
+     WING_STRUCTURE-1.20861       NO       
+     WING_STRUCTURE-1.20862       NO       
+     WING_STRUCTURE-1.20863       NO       
+     WING_STRUCTURE-1.20864       NO       
+     WING_STRUCTURE-1.20865       NO       
+     WING_STRUCTURE-1.20866       NO       
+     WING_STRUCTURE-1.20867       NO       
+     WING_STRUCTURE-1.20868       NO       
+     WING_STRUCTURE-1.20869       NO       
+     WING_STRUCTURE-1.20870       NO       
+  
 
 
 
                             P R O B L E M   S I Z E
 
 
-          NUMBER OF ELEMENTS IS                                   189
-          NUMBER OF NODES IS                                      368
-          NUMBER OF NODES DEFINED BY THE USER                     368
-          TOTAL NUMBER OF VARIABLES IN THE MODEL                 2208
+          NUMBER OF ELEMENTS IS                                 39610
+          NUMBER OF NODES IS                                    40568
+          NUMBER OF NODES DEFINED BY THE USER                   40568
+          TOTAL NUMBER OF VARIABLES IN THE MODEL               243408
           (DEGREES OF FREEDOM PLUS MAX NO. OF ANY LAGRANGE MULTIPLIER
            VARIABLES. INCLUDE *PRINT,SOLVE=YES TO GET THE ACTUAL NUMBER.)
 
@@ -186,13 +207,13 @@
 
 
      JOB TIME SUMMARY
-       USER TIME (SEC)      =  0.10000    
-       SYSTEM TIME (SEC)    =  0.10000    
-       TOTAL CPU TIME (SEC) =  0.20000    
-       WALLCLOCK TIME (SEC) =          0
+       USER TIME (SEC)      =   3.3000    
+       SYSTEM TIME (SEC)    =  0.20000    
+       TOTAL CPU TIME (SEC) =   3.5000    
+       WALLCLOCK TIME (SEC) =          4
 1
 
-   Abaqus 6.14-2                                  Date 15-Mar-2017   Time 19:30:10
+   Abaqus 6.14-2                                  Date 29-Mar-2017   Time 18:50:07
    For use at TEXAS A _ M UNIVERSITY SYSTEM under license from Dassault Systemes or its subsidiary.
 
                                                                                                STEP    1  INCREMENT    1
@@ -220,68 +241,7 @@
               OPERATIONS           REQUIRED          MINIMIZE I/O
              PER ITERATION           (MB)               (MB)
   
-     1         2.14E+006               17                 25
-  
- NOTE:
-      (1) SINCE ABAQUS DOES NOT PRE-ALLOCATE MEMORY AND ONLY ALLOCATES MEMORY AS NEEDED DURING THE ANALYSIS,
-          THE MEMORY REQUIREMENT PRINTED HERE CAN ONLY BE VIEWED AS A GENERAL GUIDELINE BASED ON THE BEST
-          KNOWLEDGE AVAILABLE AT THE BEGINNING OF A STEP BEFORE THE SOLUTION PROCESS HAS BEGUN.
-      (2) THE ESTIMATE IS NORMALLY UPDATED AT THE BEGINNING OF EVERY STEP. IT IS THE MAXIMUM VALUE OF THE
-          ESTIMATE FROM THE CURRENT STEP TO THE LAST STEP OF THE ANALYSIS, WITH UNSYMMETRIC SOLUTION TAKEN
-          INTO ACCOUNT IF APPLICABLE. 
-      (3) SINCE THE ESTIMATE IS BASED ON THE ACTIVE DEGREES OF FREEDOM IN THE FIRST ITERATION OF THE 
-          CURRENT STEP, THE MEMORY ESTIMATE MIGHT BE SIGNIFICANTLY DIFFERENT THAN ACTUAL USAGE FOR 
-          PROBLEMS WITH SUBSTANTIAL CHANGES IN ACTIVE DEGREES OF FREEDOM BETWEEN STEPS (OR EVEN WITHIN
-          THE SAME STEP). EXAMPLES ARE: PROBLEMS WITH SIGNIFICANT CONTACT CHANGES, PROBLEMS WITH MODEL
-          CHANGE, PROBLEMS WITH BOTH STATIC STEP AND STEADY STATE DYNAMIC PROCEDURES WHERE ACOUSTIC 
-          ELEMENTS WILL ONLY BE ACTIVATED IN THE STEADY STATE DYNAMIC STEPS.
-      (4) FOR MULTI-PROCESS EXECUTION, THE ESTIMATED VALUE OF FLOATING POINT OPERATIONS FOR EACH PROCESS
-          IS BASED ON AN INITIAL SCHEDULING OF OPERATIONS AND MIGHT NOT REFLECT THE ACTUAL FLOATING 
-          POINT OPERATIONS COMPLETED ON EACH PROCESS. OPERATIONS ARE DYNAMICALLY BALANCED DURING EXECUTION, 
-          SO THE ACTUAL BALANCE OF OPERATIONS BETWEEN PROCESSES IS EXPECTED TO BE BETTER THAN THE ESTIMATE
-          PRINTED HERE.
-      (5) THE UPPER LIMIT OF MEMORY THAT CAN BE ALLOCATED BY ABAQUS WILL IN GENERAL DEPEND ON THE VALUE OF
-          THE "MEMORY" PARAMETER AND THE AMOUNT OF PHYSICAL MEMORY AVAILABLE ON THE MACHINE. PLEASE SEE
-          THE "ABAQUS ANALYSIS USER'S MANUAL" FOR MORE DETAILS. THE ACTUAL USAGE OF MEMORY AND OF DISK
-          SPACE FOR SCRATCH DATA WILL DEPEND ON THIS UPPER LIMIT AS WELL AS THE MEMORY REQUIRED TO MINIMIZE
-          I/O. IF THE MEMORY UPPER LIMIT IS GREATER THAN THE MEMORY REQUIRED TO MINIMIZE I/O, THEN THE ACTUAL
-          MEMORY USAGE WILL BE CLOSE TO THE ESTIMATED "MEMORY TO MINIMIZE I/O" VALUE, AND THE SCRATCH DISK
-          USAGE WILL BE CLOSE-TO-ZERO; OTHERWISE, THE ACTUAL MEMORY USED WILL BE CLOSE TO THE PREVIOUSLY
-          MENTIONED MEMORY LIMIT, AND THE SCRATCH DISK USAGE WILL BE ROUGHLY PROPORTIONAL TO THE DIFFERENCE
-          BETWEEN THE ESTIMATED "MEMORY TO MINIMIZE I/O" AND THE MEMORY UPPER LIMIT. HOWEVER ACCURATE
-          ESTIMATE OF THE SCRATCH DISK SPACE IS NOT POSSIBLE.
-      (6) USING "*RESTART, WRITE" CAN GENERATE A LARGE AMOUNT OF DATA WRITTEN IN THE WORK DIRECTORY.
-1
-
-   Abaqus 6.14-2                                  Date 15-Mar-2017   Time 19:30:10
-   For use at TEXAS A _ M UNIVERSITY SYSTEM under license from Dassault Systemes or its subsidiary.
-
-                                                                                               STEP    2  INCREMENT    1
-                                                                                          TIME COMPLETED IN THIS STEP   0.00    
-
-
-                        S T E P       2     S T A T I C   A N A L Y S I S
-
-
-                                                                                          
-
-     AUTOMATIC TIME CONTROL WITH -
-          A SUGGESTED INITIAL TIME INCREMENT OF                 1.00    
-          AND A TOTAL TIME PERIOD OF                            1.00    
-          THE MINIMUM TIME INCREMENT ALLOWED IS                1.000E-05
-          THE MAXIMUM TIME INCREMENT ALLOWED IS                 1.00    
-
-     LINEAR EQUATION SOLVER TYPE         DIRECT SPARSE
-
-          LARGE DISPLACEMENT THEORY WILL BE USED
-  
-                   M E M O R Y   E S T I M A T E
-  
- PROCESS      FLOATING PT       MINIMUM MEMORY        MEMORY TO
-              OPERATIONS           REQUIRED          MINIMIZE I/O
-             PER ITERATION           (MB)               (MB)
-  
-     1         2.14E+006               17                 25
+     1         5.20E+009              111                534
   
  NOTE:
       (1) SINCE ABAQUS DOES NOT PRE-ALLOCATE MEMORY AND ONLY ALLOCATES MEMORY AS NEEDED DURING THE ANALYSIS,
@@ -319,13 +279,12 @@
 
 
                               ANALYSIS COMPLETE
-                              WITH      8 WARNING MESSAGES ON THE MSG FILE
-                                        8 WARNINGS ARE FOR NUMERICAL PROBLEMS
+                              WITH      1 WARNING MESSAGES ON THE DAT FILE
 
 
 
      JOB TIME SUMMARY
-       USER TIME (SEC)      =  0.70000    
-       SYSTEM TIME (SEC)    =  0.20000    
-       TOTAL CPU TIME (SEC) =  0.90000    
-       WALLCLOCK TIME (SEC) =          0
+       USER TIME (SEC)      =   23.600    
+       SYSTEM TIME (SEC)    =   2.3000    
+       TOTAL CPU TIME (SEC) =   25.900    
+       WALLCLOCK TIME (SEC) =         10

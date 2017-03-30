@@ -30,7 +30,7 @@ def generate_venation(kill_distance, growth_distance, grid_size,
     sout = 0
     # Calling xfoil with Poper
     if plot:
-        ps = sp.Popen(['leafy_generator.exe'],
+        ps = sp.Popen(['SCO_3_28.exe'],
                       stdin=sp.PIPE,
                       stdout=sout,
                       stderr=None)

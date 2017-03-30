@@ -14,9 +14,8 @@ from abaqusConstants import *
 from caeModules import *
 
 def generate_module(Au, Al, deltaz, spar_x_coordinate, chord, span,
-                 aluminum_type, venation_type, aluminum_thickness,
-                 aluminum_properties, SMA_thickness, SMA_properties,
-                 venation_properties, x_u1, x_u2, x_l1, x_l2, datafile):
+                structure_thickness, structure_properties, SMA_thickness,
+                x_u1, x_u2, x_l1, x_l2, datafile):
 
     # Spar coordinates
     spar_y_coordinate = CST(spar_x_coordinate, chord, deltaz, Au, Al)
@@ -28,12 +27,10 @@ def generate_module(Au, Al, deltaz, spar_x_coordinate, chord, span,
     y_l1 = list(CST(x_l1, chord, deltaz[1], Al=Al))
     y_l2 = list(CST(x_l2, chord, deltaz[1], Al=Al))
 
-    material_sets = ['Set-OML-Aluminum','Set-SMA','Set-Venation-Structure', 'Set-Spars']
-    material_properties = [aluminum_properties, SMA_properties, venation_properties,
-                           venation_properties]
-    material_names = ['AL-2024', 'SMA', 'AL-6061', 'AL-6061']
-    material_thicknesses = [aluminum_thickness, SMA_thickness, aluminum_thickness,
-                            aluminum_thickness]
+    material_sets = ['Set-All']
+    material_properties = [structure_properties]
+    material_names = ['ABS']
+    material_thicknesses = [structure_thickness]
 
     # Abaqus
     #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -57,6 +54,10 @@ def generate_module(Au, Al, deltaz, spar_x_coordinate, chord, span,
 
     # Partitioning
     p = mdb.models['Model-1'].parts['wing_structure']
+    try:
+        enhanced_partition(p, [0], [0], [span/2.], plane = 'XZ')
+    except:
+        print 'LE already exists'
     x_partitions = x_u1 + x_u2 + x_l1 + x_l2
     y_partitions = y_u1 + y_u2 + y_l1 + y_l2
     z_partitions = [span/2. for i in range(len(x_partitions))]
@@ -87,28 +88,30 @@ def generate_module(Au, Al, deltaz, spar_x_coordinate, chord, span,
                 wing_data['z'].insert(i+1, 0)
     # Surface for Outer Mold Line
     f = p.faces
-    pickedRegions = enhanced_findAt(f, wing_data['x'], wing_data['y'],
+    pickedRegions_p = enhanced_findAt(f, wing_data['x'], wing_data['y'],
                                     wing_data['z'], coordinate_type = 'face_nodes')
-    p.Surface(side2Faces = pickedRegions, name='Surf-OML')
-    p.Set(faces = pickedRegions, name='Set-OML')
+    p.Surface(side2Faces = pickedRegions_p, name='Surf-OML')
+    p.Set(faces = pickedRegions_p, name='Set-OML')
 
     f = a.instances['wing_structure-1'].faces
-    pickedRegions = enhanced_findAt(f, wing_data['x'], wing_data['y'],
+    pickedRegions_a = enhanced_findAt(f, wing_data['x'], wing_data['y'],
                                     wing_data['z'], coordinate_type = 'face_nodes')
-    a.Set(faces = pickedRegions, name='Set-OML')
+    a.Set(faces = pickedRegions_a, name='Set-OML')
 
     # Set for internal Venation structure
     f = p.faces
-    pickedRegions = enhanced_findAt(f, venation_data['x'], venation_data['y'],
-                                    venation_data['z'], coordinate_type = 'face_nodes',
-                                    ratio = 1.)
-    p.Set(faces = pickedRegions, name='Set-Venation-Structure')
+    # pickedRegions = enhanced_findAt(f, venation_data['x'], venation_data['y'],
+    #                                 venation_data['z'], coordinate_type = 'face_nodes',
+    #                                 ratio = ratio_list)
+    pickedRegions = f
+    p.Set(faces = pickedRegions, name='Set-All')
 
-    f = a.instances['wing_structure-1'].faces
-    pickedRegions = enhanced_findAt(f, venation_data['x'], venation_data['y'],
-                                    venation_data['z'], coordinate_type = 'face_nodes',
-                                    ratio = 1.)
-    a.Set(faces = pickedRegions, name='Set-Venation-Structure')
+    # f = a.instances['wing_structure-1'].faces
+    # pickedRegions = enhanced_findAt(f, venation_data['x'], venation_data['y'],
+    #                                 venation_data['z'], coordinate_type = 'face_nodes',
+    #                                 ratio = ratio_list)
+    # pickedRegions = boolean_set_operation(f, pickedRegions_a)
+    # a.Set(faces = pickedRegions, name='Set-Venation-Structure')
 
     # Set for Main box
     camber_y_coordinate = [(spar_y_coordinate['u'][0]-spar_y_coordinate['l'][0])/2.,
