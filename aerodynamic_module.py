@@ -29,14 +29,14 @@ def create_aerodynamic_step(x, y, velocity, altitude, aoa, chord, span,
     # Abaqus
 
     # Generate Step
-    mdb.models['Model-1'].StaticStep(name=StepName, previous=prev_Step, nlgeom=ON)
+    mdb.models['Model-1'].StaticStep(name=StepName, previous=prev_Step)
 
     # Generate BC
     a = mdb.models['Model-1'].rootAssembly
     region = a.instances['wing_structure-1'].sets['Set-Spars']
     mdb.models['Model-1'].EncastreBC(name='BC-Encastre', createStepName=StepName,
         region=region, localCsys=None)
-        
+
     # Generate the Force Field
     mdb.models['Model-1'].MappedField(name='Distribution', description='',
         regionType=POINT, partLevelData=False, localCsys=None, pointDataFormat=XYZ,

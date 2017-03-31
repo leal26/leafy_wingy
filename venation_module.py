@@ -30,7 +30,7 @@ def generate_venation(kill_distance, growth_distance, grid_size,
     sout = 0
     # Calling xfoil with Poper
     if plot:
-        ps = sp.Popen(['SCO_3_28.exe'],
+        ps = sp.Popen(['SCO_3_30.exe'],
                       stdin=sp.PIPE,
                       stdout=sout,
                       stderr=None)
@@ -51,9 +51,9 @@ def generate_venation(kill_distance, growth_distance, grid_size,
     # From stdin
     ps.stdin.close()
     # From popen
-    #ps.wait()
-    time.sleep(10)
-    ps.kill()
+    ps.wait()
+    # time.sleep(10)
+    # ps.kill()
 
 
     header = ['element', 'x1', 'y1', 'x2', 'y2']

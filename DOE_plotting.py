@@ -24,6 +24,7 @@ print problem.levels
 print 'n_var: ', problem.n_var
 
 convert_to_MPa = lambda x: x/1e6
+convert_to_abs = lambda x: abs(x)
 problem.plot(xlabel = ['$d_k$', '$d_g$', '$N$'],
-             ylabel = ['TE displacement (m)', 'N nodes', 'Max stress (Mpa)'],
-             process = {'stress':convert_to_MPa})
+             ylabel = ['TE displacement (m)', 'N edges', 'Max stress (Mpa)'],
+             process = {'stress':convert_to_MPa, 'displacement':convert_to_abs})

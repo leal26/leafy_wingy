@@ -1,6 +1,6 @@
 1
 
-   Abaqus 6.14-2                                  Date 29-Mar-2017   Time 18:50:07
+   Abaqus 6.14-2                                  Date 30-Mar-2017   Time 12:29:52
    For use at TEXAS A _ M UNIVERSITY SYSTEM under license from Dassault Systemes or its subsidiary.
 
                                                                                  
@@ -89,11 +89,9 @@
 
      THE MAXIMUM NUMBER OF INCREMENTS IN THIS STEP IS                     100
 
-          LARGE DISPLACEMENT THEORY WILL BE USED
-
      LINEAR EXTRAPOLATION WILL BE USED
 
-     CHARACTERISTIC ELEMENT LENGTH     1.994E-03
+     CHARACTERISTIC ELEMENT LENGTH     2.000E-03
 
      DETAILS REGARDING ACTUAL SOLUTION WAVEFRONT REQUESTED
 
@@ -118,12 +116,12 @@
  
      INITIAL ELEMENT LOAD BALANCE
         COMPUTE NODE   1   PROCESS    NUMBER OF ELEMENTS
-                              1            10682
-                              2            10240
-                              3            9472
-                              4            9216
+                              1            768
+                              2            768
+                              3            708
+                              4            512
 
-  NUMBER OF EQUATIONS =   243408     NUMBER OF FLOATING PT. OPERATIONS =  5.20E+09
+  NUMBER OF EQUATIONS =    31932     NUMBER OF FLOATING PT. OPERATIONS =  3.73E+07
 
   USING THE DIRECT SOLVER WITH   4 PROCESSORS
 
@@ -131,137 +129,35 @@
 
      CHECK POINT  END OF SOLVER       
 
-       ELAPSED USER TIME (SEC)      =   1.9000    
-       ELAPSED SYSTEM TIME (SEC)    =  0.40000    
-       ELAPSED TOTAL CPU TIME (SEC) =   2.3000    
+       ELAPSED USER TIME (SEC)      =  0.20000    
+       ELAPSED SYSTEM TIME (SEC)    =   0.0000    
+       ELAPSED TOTAL CPU TIME (SEC) =  0.20000    
        ELAPSED WALLCLOCK TIME (SEC) =          0
 
                CONVERGENCE CHECKS FOR EQUILIBRIUM ITERATION     1
 
 
- AVERAGE FORCE                      1.125E-02   TIME AVG. FORCE       1.125E-02
- LARGEST RESIDUAL FORCE             0.390       AT NODE          9   DOF  3
+ AVERAGE FORCE                      2.007E-02   TIME AVG. FORCE       2.007E-02
+ LARGEST RESIDUAL FORCE             5.265E-10   AT NODE        226   DOF  1
    INSTANCE: WING_STRUCTURE-1                                                                
- LARGEST INCREMENT OF DISP.        -1.438E-03   AT NODE       1073   DOF  2
+ LARGEST INCREMENT OF DISP.        -8.380E-02   AT NODE        770   DOF  2
    INSTANCE: WING_STRUCTURE-1                                                                
- LARGEST CORRECTION TO DISP.       -1.438E-03   AT NODE       1073   DOF  2
+ LARGEST CORRECTION TO DISP.       -8.380E-02   AT NODE        770   DOF  2
    INSTANCE: WING_STRUCTURE-1                                                                
-          FORCE     EQUILIBRIUM NOT ACHIEVED WITHIN TOLERANCE.
+ ESTIMATE OF DISP.    CORRECTION   -1.383E-08
+ FORCE     EQUILIB. ACCEPTED BASED ON SMALL RESIDUAL AND ESTIMATED CORRECTION
 
- AVERAGE MOMENT                     2.556E-05   TIME AVG. MOMENT      2.556E-05
- LARGEST RESIDUAL MOMENT            2.763E-06   AT NODE      11804   DOF  6
+ AVERAGE MOMENT                     9.454E-05   TIME AVG. MOMENT      9.454E-05
+ LARGEST RESIDUAL MOMENT           -1.069E-13   AT NODE         64   DOF  4
    INSTANCE: WING_STRUCTURE-1                                                                
- LARGEST INCREMENT OF ROTATION     -1.596E-02   AT NODE          9   DOF  6
+ LARGEST INCREMENT OF ROTATION     -0.607       AT NODE        829   DOF  6
    INSTANCE: WING_STRUCTURE-1                                                                
- LARGEST CORRECTION TO ROTATION    -1.596E-02   AT NODE          9   DOF  6
+ LARGEST CORRECTION TO ROTATION    -0.607       AT NODE        829   DOF  6
    INSTANCE: WING_STRUCTURE-1                                                                
-          MOMENT    EQUILIBRIUM NOT ACHIEVED WITHIN TOLERANCE.
+          THE MOMENT    EQUILIBRIUM RESPONSE WAS LINEAR IN THIS INCREMENT
 
-  NUMBER OF EQUATIONS =   243408     NUMBER OF FLOATING PT. OPERATIONS =  5.20E+09
-
-  USING THE DIRECT SOLVER WITH   4 PROCESSORS
-
-     CHECK POINT   START OF SOLVER    
-
-     CHECK POINT  END OF SOLVER       
-
-       ELAPSED USER TIME (SEC)      =   1.9000    
-       ELAPSED SYSTEM TIME (SEC)    =  0.10000    
-       ELAPSED TOTAL CPU TIME (SEC) =   2.0000    
-       ELAPSED WALLCLOCK TIME (SEC) =          1
-
-               CONVERGENCE CHECKS FOR EQUILIBRIUM ITERATION     2
-
-
- AVERAGE FORCE                      1.163E-02   TIME AVG. FORCE       1.163E-02
- LARGEST RESIDUAL FORCE             3.801E-02   AT NODE        964   DOF  3
-   INSTANCE: WING_STRUCTURE-1                                                                
- LARGEST INCREMENT OF DISP.        -1.905E-03   AT NODE        998   DOF  2
-   INSTANCE: WING_STRUCTURE-1                                                                
- LARGEST CORRECTION TO DISP.       -4.674E-04   AT NODE        999   DOF  2
-   INSTANCE: WING_STRUCTURE-1                                                                
-          FORCE     EQUILIBRIUM NOT ACHIEVED WITHIN TOLERANCE.
-
- AVERAGE MOMENT                     2.725E-05   TIME AVG. MOMENT      2.725E-05
- LARGEST RESIDUAL MOMENT           -2.773E-06   AT NODE      11291   DOF  6
-   INSTANCE: WING_STRUCTURE-1                                                                
- LARGEST INCREMENT OF ROTATION     -2.074E-02   AT NODE        958   DOF  6
-   INSTANCE: WING_STRUCTURE-1                                                                
- LARGEST CORRECTION TO ROTATION    -4.980E-03   AT NODE        964   DOF  6
-   INSTANCE: WING_STRUCTURE-1                                                                
-          MOMENT    EQUILIBRIUM NOT ACHIEVED WITHIN TOLERANCE.
-
-  NUMBER OF EQUATIONS =   243408     NUMBER OF FLOATING PT. OPERATIONS =  5.20E+09
-
-  USING THE DIRECT SOLVER WITH   4 PROCESSORS
-
-     CHECK POINT   START OF SOLVER    
-
-     CHECK POINT  END OF SOLVER       
-
-       ELAPSED USER TIME (SEC)      =   2.1000    
-       ELAPSED SYSTEM TIME (SEC)    =  0.10000    
-       ELAPSED TOTAL CPU TIME (SEC) =   2.2000    
-       ELAPSED WALLCLOCK TIME (SEC) =          0
-
-               CONVERGENCE CHECKS FOR EQUILIBRIUM ITERATION     3
-
-
- AVERAGE FORCE                      1.186E-02   TIME AVG. FORCE       1.186E-02
- LARGEST RESIDUAL FORCE            -7.466E-03   AT NODE       1110   DOF  3
-   INSTANCE: WING_STRUCTURE-1                                                                
- LARGEST INCREMENT OF DISP.        -2.087E-03   AT NODE        998   DOF  2
-   INSTANCE: WING_STRUCTURE-1                                                                
- LARGEST CORRECTION TO DISP.       -1.820E-04   AT NODE        997   DOF  2
-   INSTANCE: WING_STRUCTURE-1                                                                
-          FORCE     EQUILIBRIUM NOT ACHIEVED WITHIN TOLERANCE.
-
- AVERAGE MOMENT                     2.798E-05   TIME AVG. MOMENT      2.798E-05
- LARGEST RESIDUAL MOMENT           -6.423E-08   AT NODE      11336   DOF  6
-   INSTANCE: WING_STRUCTURE-1                                                                
- LARGEST INCREMENT OF ROTATION     -2.293E-02   AT NODE        958   DOF  6
-   INSTANCE: WING_STRUCTURE-1                                                                
- LARGEST CORRECTION TO ROTATION    -2.208E-03   AT NODE        960   DOF  6
-   INSTANCE: WING_STRUCTURE-1                                                                
- ESTIMATE OF ROTATION CORRECTION    5.132E-05
- MOMENT    EQUILIB. ACCEPTED BASED ON SMALL RESIDUAL AND ESTIMATED CORRECTION
-
-  NUMBER OF EQUATIONS =   243408     NUMBER OF FLOATING PT. OPERATIONS =  5.20E+09
-
-  USING THE DIRECT SOLVER WITH   4 PROCESSORS
-
-     CHECK POINT   START OF SOLVER    
-
-     CHECK POINT  END OF SOLVER       
-
-       ELAPSED USER TIME (SEC)      =   1.9000    
-       ELAPSED SYSTEM TIME (SEC)    =  0.20000    
-       ELAPSED TOTAL CPU TIME (SEC) =   2.1000    
-       ELAPSED WALLCLOCK TIME (SEC) =          1
-
-               CONVERGENCE CHECKS FOR EQUILIBRIUM ITERATION     4
-
-
- AVERAGE FORCE                      1.188E-02   TIME AVG. FORCE       1.188E-02
- LARGEST RESIDUAL FORCE             2.020E-06   AT NODE        967   DOF  3
-   INSTANCE: WING_STRUCTURE-1                                                                
- LARGEST INCREMENT OF DISP.        -2.090E-03   AT NODE        998   DOF  2
-   INSTANCE: WING_STRUCTURE-1                                                                
- LARGEST CORRECTION TO DISP.       -2.665E-06   AT NODE       1005   DOF  2
-   INSTANCE: WING_STRUCTURE-1                                                                
-          THE FORCE     EQUILIBRIUM EQUATIONS HAVE CONVERGED
-
- AVERAGE MOMENT                     2.800E-05   TIME AVG. MOMENT      2.800E-05
- LARGEST RESIDUAL MOMENT           -2.394E-09   AT NODE       3035   DOF  6
-   INSTANCE: WING_STRUCTURE-1                                                                
- LARGEST INCREMENT OF ROTATION     -2.296E-02   AT NODE        958   DOF  6
-   INSTANCE: WING_STRUCTURE-1                                                                
- LARGEST CORRECTION TO ROTATION    -3.466E-05   AT NODE        965   DOF  6
-   INSTANCE: WING_STRUCTURE-1                                                                
-          THE MOMENT    EQUILIBRIUM EQUATIONS HAVE CONVERGED
-
- ITERATION SUMMARY FOR THE INCREMENT:   4 TOTAL ITERATIONS, OF WHICH
-   0 ARE SEVERE DISCONTINUITY ITERATIONS AND  4 ARE EQUILIBRIUM ITERATIONS.
+ ITERATION SUMMARY FOR THE INCREMENT:   1 TOTAL ITERATIONS, OF WHICH
+   0 ARE SEVERE DISCONTINUITY ITERATIONS AND  1 ARE EQUILIBRIUM ITERATIONS.
 
  TIME INCREMENT COMPLETED   1.00    ,  FRACTION OF STEP COMPLETED   1.00    
  STEP TIME COMPLETED        1.00    ,  TOTAL TIME COMPLETED         1.00    
@@ -274,14 +170,14 @@
      ANALYSIS SUMMARY:
      TOTAL OF          1  INCREMENTS
                        0  CUTBACKS IN AUTOMATIC INCREMENTATION
-                       4  ITERATIONS INCLUDING CONTACT ITERATIONS IF PRESENT
-                       4  PASSES THROUGH THE EQUATION SOLVER OF WHICH 
-                       4  INVOLVE MATRIX DECOMPOSITION, INCLUDING
+                       1  ITERATIONS INCLUDING CONTACT ITERATIONS IF PRESENT
+                       1  PASSES THROUGH THE EQUATION SOLVER OF WHICH 
+                       1  INVOLVE MATRIX DECOMPOSITION, INCLUDING
                        0  DECOMPOSITION(S) OF THE MASS MATRIX
                        1  REORDERING OF EQUATIONS TO MINIMIZE WAVEFRONT
                        0  ADDITIONAL RESIDUAL EVALUATIONS FOR LINE SEARCHES
                        0  ADDITIONAL OPERATOR EVALUATIONS FOR LINE SEARCHES
-                       1  WARNING MESSAGES DURING USER INPUT PROCESSING
+                       0  WARNING MESSAGES DURING USER INPUT PROCESSING
                        0  WARNING MESSAGES DURING ANALYSIS
                        0  ANALYSIS WARNINGS ARE NUMERICAL PROBLEM MESSAGES
                        0  ANALYSIS WARNINGS ARE NEGATIVE EIGENVALUE MESSAGES
@@ -290,7 +186,7 @@
 
 
      JOB TIME SUMMARY
-       USER TIME (SEC)      =   23.600    
-       SYSTEM TIME (SEC)    =   2.3000    
-       TOTAL CPU TIME (SEC) =   25.900    
-       WALLCLOCK TIME (SEC) =         10
+       USER TIME (SEC)      =  0.90000    
+       SYSTEM TIME (SEC)    =  0.30000    
+       TOTAL CPU TIME (SEC) =   1.2000    
+       WALLCLOCK TIME (SEC) =          1

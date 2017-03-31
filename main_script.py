@@ -31,7 +31,7 @@ grid_size = design_variables['N']
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # PARAMETERS
 # Wing parameters
-span = .02
+span = .002
 chord = 1.
 velocity = 30.
 aoa = 8.
@@ -57,9 +57,9 @@ Step1 = 'Aerodynamic loading'
 Step2 = 'Morphing displacement'
 
 # Material parameters
-structure_thickness = 0.002
+structure_thickness = 0.001
 structure_properties = Materials['ABS']['Average']
-SMA_thickness = 0.002
+SMA_thickness = 0.001
 
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -111,13 +111,15 @@ job = mdb.Job(name=JobName, model='Model-1', description='', type=ANALYSIS,
 
 mdb.saveAs(
 	pathName='C:/Users/leal26/Documents/GitHub/leafy_wingy/wing_model.cae')
-
-job.submit()
-job.waitForCompletion()
-BREAK
+try:
+    job.submit()
+    job.waitForCompletion()
+except:
+    print 'Abaqus odb file had an error'
 # Getting data out of it
 TE_displacement = get_displacement(JobName + '.odb', Step1)
 print 'Trailing Edge displacement: ', TE_displacement
+print 'Number of nodes: ', TE_displacement
 max_stress = find_maxMises(JobName, Step1)
 # max_stress_OML = find_maxMises(JobName, Step2, 'Set-OML'.upper())
 # max_stress = max(max_stress_OML, max_stress_venation)
