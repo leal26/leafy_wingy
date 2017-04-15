@@ -32,9 +32,9 @@ print 'deisgn variable: ', kill_distance, growth_distance, grid_size
 # PARAMETERS
 # Wing parameters
 span = .002
-chord = 1.
-velocity = 30.
-aoa = 8.
+chord = design_variables['c']
+velocity = design_variables['V']
+aoa = design_variables['alfa']
 altitude = 10000.
 spar_x_coordinate = [150.E-03, 292.5E-03]
 
