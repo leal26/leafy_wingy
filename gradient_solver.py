@@ -9,9 +9,10 @@ def run_abaqus(design_variables):
     command_file = 'launch_cmd.bat'
     output_file = 'output.p'
     global outputs
-    design_variables = {'g': design_variables[0],
+    design_variables = {'g': 10*design_variables[0],
                         'k': 0.02 + (0.075-0.02)*design_variables[1],
-                        'N': 10000 + 90000*design_variables[2]}
+                        'N': 100 + 900*design_variables[2]}
+    print design_variables
     # Write input file
     fileObject = open(input_file,'wb')
     pickle.dump( design_variables, fileObject)
@@ -50,10 +51,10 @@ file_txt = open('gradient_data.txt', 'w')
 file_txt.close()
 
 data = []
-x0 = [.4, .6, .5]
+x0 = [.1*0.033663, (0.053503-0.02)/(0.075), 550.000000/(880.)]
 
 low_bound = [0, 0, 0]
-high_bound = [1, 1, .01]
+high_bound = [.1, 1, 1]
 
 global outputs
 outputs = {'stress':0}
@@ -62,7 +63,7 @@ cons = ({'type': 'ineq',
          'fun': run_cons})
 result = minimize(run_abaqus, x0, bounds = bounds,
                   constraints = cons, callback=run_reporter,
-                  options = {'eps': 1.e-3})
+                  options = {'eps': 1.e-2})
 
 print result.x
 print result.fun

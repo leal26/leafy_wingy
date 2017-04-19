@@ -1,10 +1,10 @@
 (dp0
 S'stress'
 p1
-F3519522.75
+F27714796.0
 sS'nodes'
 p2
-I282
+I120
 sS'displacement'
 p3
 cnumpy.core.multiarray
@@ -26,7 +26,7 @@ NNNI-1
 I-1
 I0
 tp10
-bS'_\xc6\x1d\xb6'
+bS'\x10)\xd2\xbc'
 p11
 tp12
 Rp13

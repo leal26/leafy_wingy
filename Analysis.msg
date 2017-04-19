@@ -1,6 +1,6 @@
 1
 
-   Abaqus 6.14-2                                  Date 15-Apr-2017   Time 10:00:09
+   Abaqus 6.14-2                                  Date 18-Apr-2017   Time 20:29:10
    For use at TEXAS A _ M UNIVERSITY SYSTEM under license from Dassault Systemes or its subsidiary.
 
                                                                                  
@@ -91,7 +91,7 @@
 
      LINEAR EXTRAPOLATION WILL BE USED
 
-     CHARACTERISTIC ELEMENT LENGTH     2.007E-03
+     CHARACTERISTIC ELEMENT LENGTH     1.994E-03
 
      DETAILS REGARDING ACTUAL SOLUTION WAVEFRONT REQUESTED
 
@@ -116,12 +116,12 @@
  
      INITIAL ELEMENT LOAD BALANCE
         COMPUTE NODE   1   PROCESS    NUMBER OF ELEMENTS
-                              1            1024
-                              2            947
+                              1            768
+                              2            512
                               3            768
-                              4            768
+                              4            528
 
-  NUMBER OF EQUATIONS =    39804     NUMBER OF FLOATING PT. OPERATIONS =  5.29E+07
+  NUMBER OF EQUATIONS =    29940     NUMBER OF FLOATING PT. OPERATIONS =  3.47E+07
 
   USING THE DIRECT SOLVER WITH   4 PROCESSORS
 
@@ -129,29 +129,30 @@
 
      CHECK POINT  END OF SOLVER       
 
-       ELAPSED USER TIME (SEC)      =  0.30000    
+       ELAPSED USER TIME (SEC)      =  0.20000    
        ELAPSED SYSTEM TIME (SEC)    =  0.10000    
-       ELAPSED TOTAL CPU TIME (SEC) =  0.40000    
+       ELAPSED TOTAL CPU TIME (SEC) =  0.30000    
        ELAPSED WALLCLOCK TIME (SEC) =          0
 
                CONVERGENCE CHECKS FOR EQUILIBRIUM ITERATION     1
 
 
- AVERAGE FORCE                      5.980E-03   TIME AVG. FORCE       5.980E-03
- LARGEST RESIDUAL FORCE             2.685E-12   AT NODE       1266   DOF  2
+ AVERAGE FORCE                      1.931E-02   TIME AVG. FORCE       1.931E-02
+ LARGEST RESIDUAL FORCE            -4.516E-09   AT NODE        136   DOF  2
    INSTANCE: WING_STRUCTURE-1                                                                
- LARGEST INCREMENT OF DISP.        -6.082E-03   AT NODE        618   DOF  2
+ LARGEST INCREMENT OF DISP.        -0.134       AT NODE       1066   DOF  2
    INSTANCE: WING_STRUCTURE-1                                                                
- LARGEST CORRECTION TO DISP.       -6.082E-03   AT NODE        618   DOF  2
+ LARGEST CORRECTION TO DISP.       -0.134       AT NODE       1066   DOF  2
    INSTANCE: WING_STRUCTURE-1                                                                
-          THE FORCE     EQUILIBRIUM RESPONSE WAS LINEAR IN THIS INCREMENT
+ ESTIMATE OF DISP.    CORRECTION    1.893E-07
+ FORCE     EQUILIB. ACCEPTED BASED ON SMALL RESIDUAL AND ESTIMATED CORRECTION
 
- AVERAGE MOMENT                     1.215E-05   TIME AVG. MOMENT      1.215E-05
- LARGEST RESIDUAL MOMENT           -2.053E-15   AT NODE        513   DOF  4
+ AVERAGE MOMENT                     1.440E-04   TIME AVG. MOMENT      1.440E-04
+ LARGEST RESIDUAL MOMENT            1.667E-13   AT NODE        184   DOF  4
    INSTANCE: WING_STRUCTURE-1                                                                
- LARGEST INCREMENT OF ROTATION     -7.669E-02   AT NODE        540   DOF  6
+ LARGEST INCREMENT OF ROTATION     -0.817       AT NODE        953   DOF  6
    INSTANCE: WING_STRUCTURE-1                                                                
- LARGEST CORRECTION TO ROTATION    -7.669E-02   AT NODE        540   DOF  6
+ LARGEST CORRECTION TO ROTATION    -0.817       AT NODE        953   DOF  6
    INSTANCE: WING_STRUCTURE-1                                                                
           THE MOMENT    EQUILIBRIUM RESPONSE WAS LINEAR IN THIS INCREMENT
 
@@ -176,7 +177,7 @@
                        1  REORDERING OF EQUATIONS TO MINIMIZE WAVEFRONT
                        0  ADDITIONAL RESIDUAL EVALUATIONS FOR LINE SEARCHES
                        0  ADDITIONAL OPERATOR EVALUATIONS FOR LINE SEARCHES
-                       0  WARNING MESSAGES DURING USER INPUT PROCESSING
+                       1  WARNING MESSAGES DURING USER INPUT PROCESSING
                        0  WARNING MESSAGES DURING ANALYSIS
                        0  ANALYSIS WARNINGS ARE NUMERICAL PROBLEM MESSAGES
                        0  ANALYSIS WARNINGS ARE NEGATIVE EIGENVALUE MESSAGES
@@ -185,7 +186,7 @@
 
 
      JOB TIME SUMMARY
-       USER TIME (SEC)      =   1.0000    
-       SYSTEM TIME (SEC)    =  0.40000    
-       TOTAL CPU TIME (SEC) =   1.4000    
-       WALLCLOCK TIME (SEC) =          1
+       USER TIME (SEC)      =  0.80000    
+       SYSTEM TIME (SEC)    =  0.20000    
+       TOTAL CPU TIME (SEC) =   1.0000    
+       WALLCLOCK TIME (SEC) =          0
