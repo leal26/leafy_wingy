@@ -10,8 +10,8 @@ def run_abaqus(design_variables):
     output_file = 'output.p'
     global outputs
     design_variables = {'g': 10*design_variables[0],
-                        'k': 0.02 + (0.075-0.02)*design_variables[1],
-                        'N': 100 + 900*design_variables[2]}
+                        'k': 0.02 + (0.075-0.02)*10*design_variables[1],
+                        'N': 100 + 900*100*design_variables[2]}
     print design_variables
     # Write input file
     fileObject = open(input_file,'wb')
@@ -51,10 +51,10 @@ file_txt = open('gradient_data.txt', 'w')
 file_txt.close()
 
 data = []
-x0 = [.1*0.033663, (0.053503-0.02)/(0.075), 550.000000/(880.)]
+x0 = [.1*0.79229, .1*(0.04806 -0.02)/(0.075-0.02), .01*(813-100.)/900.]
 
 low_bound = [0, 0, 0]
-high_bound = [.1, 1, 1]
+high_bound = [.1, .1, .01]
 
 global outputs
 outputs = {'stress':0}

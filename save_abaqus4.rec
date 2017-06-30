@@ -1,0 +1,1244 @@
+# -*- coding: mbcs -*-
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].ConstrainedSketch(name='__profile__', sheetSize=200.0)
+mdb.models['Model-1'].sketches['__profile__'].Spline(points=[(1.0, 0.002), (
+    0.999748, 0.00204), (0.998993, 0.002161), (0.997736, 0.002362), (0.995977, 
+    0.002643), (0.993719, 0.003004), (0.990964, 0.003442), (0.987715, 
+    0.003959), (0.983974, 0.004551), (0.979746, 0.005219), (0.975036, 0.00596), 
+    (0.969846, 0.006773), (0.964184, 0.007656), (0.958054, 0.008607), (
+    0.951463, 0.009624), (0.944418, 0.010705), (0.936925, 0.011847), (0.928992, 
+    0.013048), (0.920627, 0.014305), (0.911838, 0.015614), (0.902635, 
+    0.016974), (0.893027, 0.018381), (0.883022, 0.019831), (0.872632, 
+    0.021321), (0.861867, 0.022848), (0.850737, 0.024408), (0.839255, 
+    0.025997), (0.82743, 0.027612), (0.815276, 0.029248), (0.802805, 0.030902), 
+    (0.790028, 0.032569), (0.77696, 0.034245), (0.763613, 0.035926), (0.75, 
+    0.037608), (0.736136, 0.039286), (0.722033, 0.040956), (0.707708, 
+    0.042614), (0.693173, 0.044256), (0.678443, 0.045876), (0.663534, 0.04747), 
+    (0.64846, 0.049034), (0.633237, 0.050564), (0.617879, 0.052056), (0.602403, 
+    0.053504), (0.586824, 0.054905), (0.571157, 0.056254), (0.555419, 
+    0.057548), (0.539625, 0.058782), (0.523791, 0.059953), (0.507933, 
+    0.061056), (0.492067, 0.062088), (0.476209, 0.063045), (0.460375, 
+    0.063924), (0.444581, 0.064722), (0.428843, 0.065435), (0.413176, 
+    0.066059), (0.397597, 0.066594), (0.382121, 0.067035), (0.366763, 0.06738), 
+    (0.35154, 0.067628), (0.336466, 0.067775), (0.321557, 0.067821), (0.306827, 
+    0.067763), (0.292292, 0.0676), (0.277967, 0.067331), (0.263864, 0.066955), 
+    (0.25, 0.066472), (0.236387, 0.06588), (0.22304, 0.06518), (0.209972, 
+    0.064372), (0.197195, 0.063456), (0.184724, 0.062432), (0.17257, 0.061302), 
+    (0.160745, 0.060067), (0.149263, 0.058727), (0.138133, 0.057285), (
+    0.127368, 0.055742), (0.116978, 0.0541), (0.106973, 0.052363), (0.097365, 
+    0.050531), (0.088162, 0.048609), (0.079373, 0.046598), (0.071008, 
+    0.044503), (0.063075, 0.042327), (0.055582, 0.040074), (0.048537, 
+    0.037747), (0.041946, 0.03535), (0.035816, 0.032888), (0.030154, 0.030366), 
+    (0.024964, 0.027787), (0.020254, 0.025156), (0.016026, 0.022479), (
+    0.012285, 0.01976), (0.009036, 0.017005), (0.006281, 0.014218), (0.004023, 
+    0.011405), (0.002264, 0.008572), (0.001007, 0.005723), (0.000252, 
+    0.002864), (0.0, 0.0), (0.000252, -0.001878), (0.001007, -0.003748), (
+    0.002264, -0.005602), (0.004023, -0.007433), (0.006281, -0.009231), (
+    0.009036, -0.010989), (0.012285, -0.012698), (0.016026, -0.014353), (
+    0.020254, -0.015944), (0.024964, -0.017466), (0.030154, -0.018912), (
+    0.035816, -0.020276), (0.041946, -0.021552), (0.048537, -0.022735), (
+    0.055582, -0.023821), (0.063075, -0.024806), (0.071008, -0.025685), (
+    0.079373, -0.026456), (0.088162, -0.027117), (0.097365, -0.027666), (
+    0.106973, -0.0281), (0.116978, -0.028421), (0.127368, -0.028628), (
+    0.138133, -0.02872), (0.149263, -0.028701), (0.160745, -0.02857), (0.17257, 
+    -0.028331), (0.184724, -0.027986), (0.197195, -0.027539), (0.209972, 
+    -0.026993), (0.22304, -0.026353), (0.236387, -0.025623), (0.25, -0.024809), 
+    (0.263864, -0.023917), (0.277967, -0.022952), (0.292292, -0.02192), (
+    0.306827, -0.020828), (0.321557, -0.019683), (0.336466, -0.018491), (
+    0.35154, -0.017261), (0.366763, -0.015998), (0.382121, -0.01471), (
+    0.397597, -0.013404), (0.413176, -0.012088), (0.428843, -0.010769), (
+    0.444581, -0.009454), (0.460375, -0.008149), (0.476209, -0.006862), (
+    0.492067, -0.005598), (0.507933, -0.004365), (0.523791, -0.003168), (
+    0.539625, -0.002012), (0.555419, -0.000903), (0.571157, 0.000154), (
+    0.586824, 0.001155), (0.602403, 0.002096), (0.617879, 0.002973), (0.633237, 
+    0.003783), (0.64846, 0.004525), (0.663534, 0.005195), (0.678443, 0.005792), 
+    (0.693173, 0.006315), (0.707708, 0.006763), (0.722033, 0.007137), (
+    0.736136, 0.007437), (0.75, 0.007664), (0.763613, 0.007818), (0.77696, 
+    0.007903), (0.790028, 0.00792), (0.802805, 0.007872), (0.815276, 0.007762), 
+    (0.82743, 0.007594), (0.839255, 0.007371), (0.850737, 0.007098), (0.861867, 
+    0.006778), (0.872632, 0.006417), (0.883022, 0.00602), (0.893027, 0.005591), 
+    (0.902635, 0.005136), (0.911838, 0.004659), (0.920627, 0.004167), (
+    0.928992, 0.003664), (0.936925, 0.003156), (0.944418, 0.002648), (0.951463, 
+    0.002145), (0.958054, 0.001652), (0.964184, 0.001174), (0.969846, 
+    0.000716), (0.975036, 0.000282), (0.979746, -0.000124), (0.983974, 
+    -0.000498), (0.987715, -0.000837), (0.990964, -0.001137), (0.993719, 
+    -0.001395), (0.995977, -0.00161), (0.997736, -0.00178), (0.998993, 
+    -0.001902), (0.999748, -0.001975), (1.0, -0.002)])
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(1, 0.002), point2=(
+    1, -0.002))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.15, 0.0195505), 
+    point2=(0.142002, 0.0197097))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.2925, 0.0195505), 
+    point2=(0.300408, 0.020758))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.142002, 0.0197097)
+    , point2=(0.134004, 0.0199066))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.300408, 0.020758), 
+    point2=(0.308311, 0.0219993))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.142002, 0.0197097)
+    , point2=(0.134381, 0.0221449))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.300408, 0.020758), 
+    point2=(0.300231, 0.028756))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.134004, 0.0199066)
+    , point2=(0.126006, 0.020076))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.308311, 0.0219993)
+    , point2=(0.316221, 0.0231994))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.134004, 0.0199066)
+    , point2=(0.132474, 0.0120543))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.308311, 0.0219993)
+    , point2=(0.309006, 0.0140295))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.134381, 0.0221449)
+    , point2=(0.134633, 0.030141))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.300231, 0.028756), 
+    point2=(0.302174, 0.0365163))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.126006, 0.020076), 
+    point2=(0.118006, 0.020074))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.316221, 0.0231994)
+    , point2=(0.324161, 0.0241764))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.132474, 0.0120543)
+    , point2=(0.132451, 0.00405434))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.309006, 0.0140295)
+    , point2=(0.309438, 0.00604119))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.134633, 0.030141), 
+    point2=(0.131736, 0.0375979))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.302174, 0.0365163)
+    , point2=(0.304515, 0.0441661))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.118006, 0.020074), 
+    point2=(0.11001, 0.0198228))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.324161, 0.0241764)
+    , point2=(0.332106, 0.025117))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.132451, 
+    0.00405434), point2=(0.135991, -0.00311984))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.309438, 
+    0.00604119), point2=(0.317226, 0.00421053))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.131736, 0.0375979)
+    , point2=(0.125536, 0.0426542))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.304515, 0.0441661)
+    , point2=(0.308766, 0.0509433))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.11001, 0.0198228), 
+    point2=(0.102031, 0.0192352))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.332106, 0.025117), 
+    point2=(0.340052, 0.0260427))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.131736, 0.0375979)
+    , point2=(0.135548, 0.0446313))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.11001, 0.0198228), 
+    point2=(0.110006, 0.0118228))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.332106, 0.025117), 
+    point2=(0.331195, 0.033065))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.317226, 
+    0.00421053), point2=(0.325194, 0.00349852))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.125536, 0.0426542)
+    , point2=(0.117545, 0.0430241))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.308766, 0.0509433)
+    , point2=(0.315922, 0.0545194))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.102031, 0.0192352)
+    , point2=(0.0940624, 0.0185313))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.340052, 0.0260427)
+    , point2=(0.348007, 0.0268918))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.308766, 0.0509433)
+    , point2=(0.304607, 0.0577773))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.102031, 0.0192352)
+    , point2=(0.101065, 0.0271766))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.110006, 0.0118228)
+    , point2=(0.105532, 0.00519052))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.331195, 0.033065), 
+    point2=(0.335059, 0.0400694))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.325194, 
+    0.00349852), point2=(0.332995, 0.00527375))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.117545, 0.0430241)
+    , point2=(0.109553, 0.0426743))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.315922, 0.0545194)
+    , point2=(0.323353, 0.0574834))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.0940624, 
+    0.0185313), point2=(0.0861261, 0.0175239))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.348007, 0.0268918)
+    , point2=(0.355968, 0.027672))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.101065, 0.0271766)
+    , point2=(0.0960005, 0.0333695))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.105532, 
+    0.00519052), point2=(0.0990982, 0.000435995))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.335059, 0.0400694)
+    , point2=(0.340436, 0.0459931))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.332995, 
+    0.00527375), point2=(0.340775, 0.00341335))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.109553, 0.0426743)
+    , point2=(0.101576, 0.0432835))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.323353, 0.0574834)
+    , point2=(0.331185, 0.0591156))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.0861261, 
+    0.0175239), point2=(0.0781277, 0.0173621))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.355968, 0.027672), 
+    point2=(0.363935, 0.0284053))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.0960005, 
+    0.0333695), point2=(0.0882901, 0.0355025))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.0990982, 
+    0.000435995), point2=(0.0922576, -0.00371193))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.340436, 0.0459931)
+    , point2=(0.347183, 0.050292))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.340775, 
+    0.00341335), point2=(0.348723, 0.00250149))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.331185, 0.0591156)
+    , point2=(0.336466, 0.067775))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.0781277, 
+    0.0173621), point2=(0.0701334, 0.0176638))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.363935, 0.0284053)
+    , point2=(0.371908, 0.0290599))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.0882901, 
+    0.0355025), point2=(0.0803569, 0.0365339))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.0922576, 
+    -0.00371193), point2=(0.086808, -0.00956872))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.347183, 0.050292), 
+    point2=(0.354162, 0.0542022))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.348723, 
+    0.00250149), point2=(0.356701, 0.0030975))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.0701334, 
+    0.0176638), point2=(0.0621429, 0.0172732))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.371908, 0.0290599)
+    , point2=(0.379883, 0.0296978))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.0701334, 
+    0.0176638), point2=(0.0700703, 0.00966402))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.0803569, 
+    0.0365339), point2=(0.071008, 0.044503))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.354162, 0.0542022)
+    , point2=(0.362102, 0.0551821))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.356701, 0.0030975)
+    , point2=(0.364452, 0.00507651))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.0621429, 
+    0.0172732), point2=(0.0542428, 0.0160129))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.379883, 0.0296978)
+    , point2=(0.38786, 0.0302956))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.362102, 0.0551821)
+    , point2=(0.369858, 0.0571421))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.364452, 
+    0.00507651), point2=(0.372298, 0.00350999))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.0542428, 
+    0.0160129), point2=(0.0464937, 0.0140251))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.38786, 0.0302956), 
+    point2=(0.395841, 0.0308541))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.0542428, 
+    0.0160129), point2=(0.052257, 0.0237625))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.38786, 0.0302956), 
+    point2=(0.388799, 0.0382403))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.369858, 0.0571421)
+    , point2=(0.377829, 0.0578274))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.372298, 
+    0.00350999), point2=(0.380264, 0.00277495))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.0464937, 
+    0.0140251), point2=(0.0397508, 0.00972005))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.395841, 0.0308541)
+    , point2=(0.403825, 0.0313554))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.395841, 0.0308541)
+    , point2=(0.397697, 0.0230726))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.388799, 0.0382403)
+    , point2=(0.393619, 0.0446249))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.377829, 0.0578274)
+    , point2=(0.385769, 0.058808))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.380264, 
+    0.00277495), point2=(0.38821, 0.00369736))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.0397508, 
+    0.00972005), point2=(0.0338121, 0.00435982))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.403825, 0.0313554)
+    , point2=(0.411808, 0.0318793))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.0397508, 
+    0.00972005), point2=(0.0444474, 0.00324375))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.397697, 0.0230726)
+    , point2=(0.40341, 0.0174721))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.393619, 0.0446249)
+    , point2=(0.400188, 0.0491916))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.385769, 0.058808), 
+    point2=(0.397597, 0.066594))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.38821, 0.00369736)
+    , point2=(0.396159, 0.0027892))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.0338121, 
+    0.00435982), point2=(0.0258125, 0.00443223))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.411808, 0.0318793)
+    , point2=(0.419797, 0.0322961))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.40341, 0.0174721), 
+    point2=(0.410066, 0.0130338))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.400188, 0.0491916)
+    , point2=(0.407737, 0.0518391))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.0258125, 
+    0.00443223), point2=(0.0178379, 0.00507022))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.419797, 0.0322961)
+    , point2=(0.427787, 0.032699))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.410066, 0.0130338)
+    , point2=(0.417457, 0.00997326))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.407737, 0.0518391)
+    , point2=(0.414883, 0.0554344))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.427787, 0.032699), 
+    point2=(0.435774, 0.0331462))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.427787, 0.032699), 
+    point2=(0.428896, 0.0406218))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.417457, 
+    0.00997326), point2=(0.423948, 0.00529596))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.414883, 0.0554344)
+    , point2=(0.422849, 0.05618))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.435774, 0.0331462)
+    , point2=(0.443766, 0.0335073))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.428896, 0.0406218)
+    , point2=(0.434275, 0.0465435))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.423948, 
+    0.00529596), point2=(0.431784, 0.00368688))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.422849, 0.05618), 
+    point2=(0.430725, 0.0575781))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.443766, 0.0335073)
+    , point2=(0.451761, 0.033789))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.434275, 0.0465435)
+    , point2=(0.441555, 0.0498599))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.431784, 
+    0.00368688), point2=(0.439753, 0.00298666))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.430725, 0.0575781)
+    , point2=(0.438631, 0.0588009))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.451761, 0.033789), 
+    point2=(0.459758, 0.0340067))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.451761, 0.033789), 
+    point2=(0.450895, 0.025836))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.439753, 
+    0.00298666), point2=(0.447732, 0.00240164))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.459758, 0.0340067)
+    , point2=(0.467755, 0.0342458))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.447732, 
+    0.00240164), point2=(0.455724, 0.00203957))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.467755, 0.0342458)
+    , point2=(0.475751, 0.0344775))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.467755, 0.0342458)
+    , point2=(0.468575, 0.0422036))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.455724, 
+    0.00203957), point2=(0.46372, 0.00180553))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.475751, 0.0344775)
+    , point2=(0.48375, 0.0345894))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.475751, 0.0344775)
+    , point2=(0.477518, 0.0266751))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.468575, 0.0422036)
+    , point2=(0.472075, 0.0493973))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.46372, 0.00180553)
+    , point2=(0.471274, 0.00444048))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.48375, 0.0345894), 
+    point2=(0.49175, 0.0346899))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.472075, 0.0493973)
+    , point2=(0.479621, 0.0520533))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.471274, 
+    0.00444048), point2=(0.479194, 0.00331219))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.49175, 0.0346899), 
+    point2=(0.49975, 0.0347318))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.479621, 0.0520533)
+    , point2=(0.487286, 0.0543434))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.479194, 
+    0.00331219), point2=(0.487192, 0.00313953))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.49975, 0.0347318), 
+    point2=(0.50775, 0.0347636))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.487192, 
+    0.00313953), point2=(0.49514, 0.00404713))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.50775, 0.0347636), 
+    point2=(0.51575, 0.0348027))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.50775, 0.0347636), 
+    point2=(0.511034, 0.0420581))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.49514, 0.00404713)
+    , point2=(0.502559, 0.00704213))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.51575, 0.0348027), 
+    point2=(0.523749, 0.0348685))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.511034, 0.0420581)
+    , point2=(0.51522, 0.0488757))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.502559, 
+    0.00704213), point2=(0.510384, 0.00537841))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.523749, 0.0348685)
+    , point2=(0.531749, 0.0348147))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.51522, 0.0488757), 
+    point2=(0.523791, 0.059953))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.510384, 
+    0.00537841), point2=(0.518364, 0.00481382))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.531749, 0.0348147)
+    , point2=(0.539748, 0.0347081))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.523791, 0.059953), 
+    point2=(0.531274, 0.0571249))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.518364, 
+    0.00481382), point2=(0.526324, 0.00560874))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.539748, 0.0347081)
+    , point2=(0.547748, 0.0346782))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.539748, 0.0347081)
+    , point2=(0.53987, 0.026709))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.531274, 0.0571249)
+    , point2=(0.539625, 0.058782))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.526324, 
+    0.00560874), point2=(0.533757, 0.00856649))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.547748, 0.0346782)
+    , point2=(0.555748, 0.034637))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.539625, 0.058782), 
+    point2=(0.555419, 0.057548))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.533757, 
+    0.00856649), point2=(0.541274, 0.00582789))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.555748, 0.034637), 
+    point2=(0.563748, 0.0345425))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.541274, 
+    0.00582789), point2=(0.555419, -0.000903))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.563748, 0.0345425)
+    , point2=(0.571745, 0.0343545))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.563748, 0.0345425)
+    , point2=(0.561915, 0.0267553))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.571745, 0.0343545)
+    , point2=(0.579744, 0.0342011))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.579744, 0.0342011)
+    , point2=(0.587741, 0.0339925))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.579744, 0.0342011)
+    , point2=(0.579854, 0.0422003))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.587741, 0.0339925)
+    , point2=(0.595737, 0.0337232))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.587741, 0.0339925)
+    , point2=(0.588732, 0.026054))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.595737, 0.0337232)
+    , point2=(0.603735, 0.0335447))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.595737, 0.0337232)
+    , point2=(0.597826, 0.0414454))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.603735, 0.0335447)
+    , point2=(0.613726, 0.0331433))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.597826, 0.0414454)
+    , point2=(0.602403, 0.053504))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.613726, 0.0331433)
+    , point2=(0.623712, 0.0326029))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.623712, 0.0326029)
+    , point2=(0.633692, 0.0319784))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.623712, 0.0326029)
+    , point2=(0.621248, 0.0229111))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.633692, 0.0319784)
+    , point2=(0.64368, 0.0314762))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.64368, 0.0314762), 
+    point2=(0.653667, 0.0309617))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.633692, 0.0319784)
+    , point2=(0.631385, 0.0417085))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.64368, 0.0314762), 
+    point2=(0.641508, 0.0412375))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.653667, 0.0309617)
+    , point2=(0.663645, 0.0303044))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.653667, 0.0309617)
+    , point2=(0.651667, 0.0211636))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.663645, 0.0303044)
+    , point2=(0.673631, 0.0297736))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.673631, 0.0297736)
+    , point2=(0.683616, 0.0292355))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.683616, 0.0292355)
+    , point2=(0.6936, 0.0286631))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.683616, 0.0292355)
+    , point2=(0.681571, 0.019447))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.6936, 0.0286631), 
+    point2=(0.703584, 0.028095))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.703584, 0.028095), 
+    point2=(0.713572, 0.0276177))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.713572, 0.0276177)
+    , point2=(0.723567, 0.027303))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.673631, 0.0297736)
+    , point2=(0.671397, 0.0395209))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.723567, 0.027303), 
+    point2=(0.733546, 0.026643))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.733546, 0.026643), 
+    point2=(0.743521, 0.0259343))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.743521, 0.0259343)
+    , point2=(0.753513, 0.0255376))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.753513, 0.0255376)
+    , point2=(0.763501, 0.0250515))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.763501, 0.0250515)
+    , point2=(0.773462, 0.0241668))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.773462, 0.0241668)
+    , point2=(0.783438, 0.0234865))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.783438, 0.0234865)
+    , point2=(0.793421, 0.0228908))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.793421, 0.0228908)
+    , point2=(0.803401, 0.0222559))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.803401, 0.0222559)
+    , point2=(0.813344, 0.0211985))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.813344, 0.0211985)
+    , point2=(0.823228, 0.019679))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.823228, 0.019679), 
+    point2=(0.833135, 0.0183172))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.833135, 0.0183172)
+    , point2=(0.843098, 0.0174582))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.843098, 0.0174582)
+    , point2=(0.853062, 0.0166085))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.853062, 0.0166085)
+    , point2=(0.861867, 0.022848))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.861867, 0.022848), 
+    point2=(0.872632, 0.021321))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.872632, 0.021321), 
+    point2=(0.883022, 0.019831))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.883022, 0.019831), 
+    point2=(0.893027, 0.018381))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.893027, 0.018381), 
+    point2=(0.902635, 0.016974))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.902635, 0.016974), 
+    point2=(0.911838, 0.015614))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.911838, 0.015614), 
+    point2=(0.920627, 0.014305))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.920627, 0.014305), 
+    point2=(0.928992, 0.013048))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.2925, 0.0195505), 
+    point2=(0.142002, 0.0197097))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.142002, 0.0197097)
+    , point2=(0.126006, 0.020076))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.300408, 0.020758), 
+    point2=(0.316221, 0.0231994))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.134004, 0.0199066)
+    , point2=(0.134381, 0.0221449))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.308311, 0.0219993)
+    , point2=(0.300231, 0.028756))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.134381, 0.0221449)
+    , point2=(0.134004, 0.0199066))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.300231, 0.028756), 
+    point2=(0.308311, 0.0219993))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.316221, 0.0231994)
+    , point2=(0.309006, 0.0140295))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.132474, 0.0120543)
+    , point2=(0.134381, 0.0221449))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.309006, 0.0140295)
+    , point2=(0.300408, 0.020758))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.134633, 0.030141), 
+    point2=(0.134004, 0.0199066))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.302174, 0.0365163)
+    , point2=(0.308311, 0.0219993))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.118006, 0.020074), 
+    point2=(0.134004, 0.0199066))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.324161, 0.0241764)
+    , point2=(0.308311, 0.0219993))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.132451, 
+    0.00405434), point2=(0.134004, 0.0199066))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.309438, 
+    0.00604119), point2=(0.308311, 0.0219993))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.131736, 0.0375979)
+    , point2=(0.134381, 0.0221449))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.304515, 0.0441661)
+    , point2=(0.300231, 0.028756))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.11001, 0.0198228), 
+    point2=(0.126006, 0.020076))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.332106, 0.025117), 
+    point2=(0.316221, 0.0231994))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.317226, 
+    0.00421053), point2=(0.309006, 0.0140295))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.125536, 0.0426542)
+    , point2=(0.135548, 0.0446313))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.308766, 0.0509433)
+    , point2=(0.302174, 0.0365163))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.102031, 0.0192352)
+    , point2=(0.110006, 0.0118228))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.340052, 0.0260427)
+    , point2=(0.331195, 0.033065))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.110006, 0.0118228)
+    , point2=(0.102031, 0.0192352))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.331195, 0.033065), 
+    point2=(0.340052, 0.0260427))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.325194, 
+    0.00349852), point2=(0.309438, 0.00604119))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.117545, 0.0430241)
+    , point2=(0.131736, 0.0375979))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.315922, 0.0545194)
+    , point2=(0.304607, 0.0577773))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.0940624, 
+    0.0185313), point2=(0.101065, 0.0271766))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.348007, 0.0268918)
+    , point2=(0.332106, 0.025117))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.101065, 0.0271766)
+    , point2=(0.0940624, 0.0185313))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.105532, 
+    0.00519052), point2=(0.102031, 0.0192352))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.335059, 0.0400694)
+    , point2=(0.340052, 0.0260427))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.332995, 
+    0.00527375), point2=(0.317226, 0.00421053))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.109553, 0.0426743)
+    , point2=(0.125536, 0.0426542))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.323353, 0.0574834)
+    , point2=(0.308766, 0.0509433))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.0861261, 
+    0.0175239), point2=(0.102031, 0.0192352))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.355968, 0.027672), 
+    point2=(0.340052, 0.0260427))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.0960005, 
+    0.0333695), point2=(0.101576, 0.0432835))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.0990982, 
+    0.000435995), point2=(0.110006, 0.0118228))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.340436, 0.0459931)
+    , point2=(0.331195, 0.033065))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.340775, 
+    0.00341335), point2=(0.325194, 0.00349852))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.331185, 0.0591156)
+    , point2=(0.315922, 0.0545194))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.0781277, 
+    0.0173621), point2=(0.0940624, 0.0185313))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.363935, 0.0284053)
+    , point2=(0.348007, 0.0268918))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.0882901, 
+    0.0355025), point2=(0.101065, 0.0271766))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.0922576, 
+    -0.00371193), point2=(0.105532, 0.00519052))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.347183, 0.050292), 
+    point2=(0.335059, 0.0400694))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.348723, 
+    0.00250149), point2=(0.332995, 0.00527375))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.0701334, 
+    0.0176638), point2=(0.0861261, 0.0175239))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.371908, 0.0290599)
+    , point2=(0.355968, 0.027672))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.0803569, 
+    0.0365339), point2=(0.0960005, 0.0333695))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.354162, 0.0542022)
+    , point2=(0.340436, 0.0459931))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.356701, 0.0030975)
+    , point2=(0.340775, 0.00341335))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.0621429, 
+    0.0172732), point2=(0.0700703, 0.00966402))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.379883, 0.0296978)
+    , point2=(0.363935, 0.0284053))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.362102, 0.0551821)
+    , point2=(0.347183, 0.050292))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.364452, 
+    0.00507651), point2=(0.348723, 0.00250149))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.0542428, 
+    0.0160129), point2=(0.0701334, 0.0176638))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.38786, 0.0302956), 
+    point2=(0.371908, 0.0290599))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.369858, 0.0571421)
+    , point2=(0.354162, 0.0542022))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.372298, 
+    0.00350999), point2=(0.356701, 0.0030975))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.0464937, 
+    0.0140251), point2=(0.052257, 0.0237625))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.395841, 0.0308541)
+    , point2=(0.388799, 0.0382403))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.388799, 0.0382403)
+    , point2=(0.395841, 0.0308541))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.377829, 0.0578274)
+    , point2=(0.362102, 0.0551821))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.380264, 
+    0.00277495), point2=(0.364452, 0.00507651))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.0397508, 
+    0.00972005), point2=(0.0542428, 0.0160129))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.403825, 0.0313554)
+    , point2=(0.397697, 0.0230726))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.397697, 0.0230726)
+    , point2=(0.403825, 0.0313554))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.393619, 0.0446249)
+    , point2=(0.395841, 0.0308541))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.385769, 0.058808), 
+    point2=(0.369858, 0.0571421))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.38821, 0.00369736)
+    , point2=(0.372298, 0.00350999))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.0338121, 
+    0.00435982), point2=(0.0444474, 0.00324375))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.411808, 0.0318793)
+    , point2=(0.395841, 0.0308541))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.40341, 0.0174721), 
+    point2=(0.403825, 0.0313554))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.400188, 0.0491916)
+    , point2=(0.388799, 0.0382403))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.0258125, 
+    0.00443223), point2=(0.0397508, 0.00972005))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.419797, 0.0322961)
+    , point2=(0.403825, 0.0313554))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.410066, 0.0130338)
+    , point2=(0.397697, 0.0230726))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.407737, 0.0518391)
+    , point2=(0.393619, 0.0446249))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.427787, 0.032699), 
+    point2=(0.411808, 0.0318793))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.417457, 
+    0.00997326), point2=(0.40341, 0.0174721))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.414883, 0.0554344)
+    , point2=(0.400188, 0.0491916))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.435774, 0.0331462)
+    , point2=(0.428896, 0.0406218))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.428896, 0.0406218)
+    , point2=(0.435774, 0.0331462))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.423948, 
+    0.00529596), point2=(0.410066, 0.0130338))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.422849, 0.05618), 
+    point2=(0.434275, 0.0465435))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.443766, 0.0335073)
+    , point2=(0.427787, 0.032699))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.434275, 0.0465435)
+    , point2=(0.430725, 0.0575781))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.431784, 
+    0.00368688), point2=(0.417457, 0.00997326))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.430725, 0.0575781)
+    , point2=(0.434275, 0.0465435))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.451761, 0.033789), 
+    point2=(0.435774, 0.0331462))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.439753, 
+    0.00298666), point2=(0.423948, 0.00529596))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.459758, 0.0340067)
+    , point2=(0.450895, 0.025836))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.447732, 
+    0.00240164), point2=(0.431784, 0.00368688))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.467755, 0.0342458)
+    , point2=(0.451761, 0.033789))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.455724, 
+    0.00203957), point2=(0.439753, 0.00298666))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.475751, 0.0344775)
+    , point2=(0.468575, 0.0422036))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.468575, 0.0422036)
+    , point2=(0.475751, 0.0344775))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.46372, 0.00180553)
+    , point2=(0.447732, 0.00240164))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.48375, 0.0345894), 
+    point2=(0.477518, 0.0266751))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.472075, 0.0493973)
+    , point2=(0.475751, 0.0344775))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.471274, 
+    0.00444048), point2=(0.455724, 0.00203957))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.49175, 0.0346899), 
+    point2=(0.475751, 0.0344775))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.479621, 0.0520533)
+    , point2=(0.468575, 0.0422036))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.479194, 
+    0.00331219), point2=(0.46372, 0.00180553))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.49975, 0.0347318), 
+    point2=(0.48375, 0.0345894))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.487192, 
+    0.00313953), point2=(0.471274, 0.00444048))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.50775, 0.0347636), 
+    point2=(0.49175, 0.0346899))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.49514, 0.00404713)
+    , point2=(0.479194, 0.00331219))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.51575, 0.0348027), 
+    point2=(0.511034, 0.0420581))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.511034, 0.0420581)
+    , point2=(0.51575, 0.0348027))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.502559, 
+    0.00704213), point2=(0.487192, 0.00313953))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.523749, 0.0348685)
+    , point2=(0.511034, 0.0420581))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.51522, 0.0488757), 
+    point2=(0.51575, 0.0348027))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.510384, 
+    0.00537841), point2=(0.49514, 0.00404713))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.531749, 0.0348147)
+    , point2=(0.51575, 0.0348027))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.523791, 0.059953), 
+    point2=(0.511034, 0.0420581))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.518364, 
+    0.00481382), point2=(0.502559, 0.00704213))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.539748, 0.0347081)
+    , point2=(0.523749, 0.0348685))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.531274, 0.0571249)
+    , point2=(0.51522, 0.0488757))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.526324, 
+    0.00560874), point2=(0.510384, 0.00537841))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.547748, 0.0346782)
+    , point2=(0.53987, 0.026709))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.539625, 0.058782), 
+    point2=(0.523791, 0.059953))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.533757, 
+    0.00856649), point2=(0.518364, 0.00481382))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.555748, 0.034637), 
+    point2=(0.539748, 0.0347081))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.541274, 
+    0.00582789), point2=(0.526324, 0.00560874))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.563748, 0.0345425)
+    , point2=(0.547748, 0.0346782))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.571745, 0.0343545)
+    , point2=(0.561915, 0.0267553))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.579744, 0.0342011)
+    , point2=(0.563748, 0.0345425))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.587741, 0.0339925)
+    , point2=(0.579854, 0.0422003))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.595737, 0.0337232)
+    , point2=(0.588732, 0.026054))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.603735, 0.0335447)
+    , point2=(0.597826, 0.0414454))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.597826, 0.0414454)
+    , point2=(0.603735, 0.0335447))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.613726, 0.0331433)
+    , point2=(0.597826, 0.0414454))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.623712, 0.0326029)
+    , point2=(0.603735, 0.0335447))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.633692, 0.0319784)
+    , point2=(0.621248, 0.0229111))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.64368, 0.0314762), 
+    point2=(0.623712, 0.0326029))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.653667, 0.0309617)
+    , point2=(0.641508, 0.0412375))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.663645, 0.0303044)
+    , point2=(0.651667, 0.0211636))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.673631, 0.0297736)
+    , point2=(0.653667, 0.0309617))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.683616, 0.0292355)
+    , point2=(0.663645, 0.0303044))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.6936, 0.0286631), 
+    point2=(0.681571, 0.019447))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.703584, 0.028095), 
+    point2=(0.683616, 0.0292355))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.713572, 0.0276177)
+    , point2=(0.6936, 0.0286631))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.723567, 0.027303), 
+    point2=(0.703584, 0.028095))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.733546, 0.026643), 
+    point2=(0.713572, 0.0276177))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.743521, 0.0259343)
+    , point2=(0.723567, 0.027303))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.753513, 0.0255376)
+    , point2=(0.733546, 0.026643))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.763501, 0.0250515)
+    , point2=(0.743521, 0.0259343))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.773462, 0.0241668)
+    , point2=(0.753513, 0.0255376))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.783438, 0.0234865)
+    , point2=(0.763501, 0.0250515))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.793421, 0.0228908)
+    , point2=(0.773462, 0.0241668))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.803401, 0.0222559)
+    , point2=(0.783438, 0.0234865))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.813344, 0.0211985)
+    , point2=(0.793421, 0.0228908))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.823228, 0.019679), 
+    point2=(0.803401, 0.0222559))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.833135, 0.0183172)
+    , point2=(0.813344, 0.0211985))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.843098, 0.0174582)
+    , point2=(0.823228, 0.019679))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.853062, 0.0166085)
+    , point2=(0.833135, 0.0183172))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.861867, 0.022848), 
+    point2=(0.843098, 0.0174582))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.872632, 0.021321), 
+    point2=(0.853062, 0.0166085))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.883022, 0.019831), 
+    point2=(0.861867, 0.022848))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.893027, 0.018381), 
+    point2=(0.872632, 0.021321))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.902635, 0.016974), 
+    point2=(0.883022, 0.019831))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.911838, 0.015614), 
+    point2=(0.893027, 0.018381))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.920627, 0.014305), 
+    point2=(0.902635, 0.016974))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.0, 0.0), point2=(
+    0.0178379, 0.00507022))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(1.0, 0.002), point2=
+    (0.928992, 0.013048))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.15, 
+    0.05881758314993344), point2=(0.15, -0.028695455174805269))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.2925, 
+    0.06760319120576902), point2=(0.2925, -0.021904600016327026))
+mdb.models['Model-1'].Part(dimensionality=THREE_D, name='Part-1', type=
+    DEFORMABLE_BODY)
+mdb.models['Model-1'].parts['Part-1'].BaseShellExtrude(depth=0.02, sketch=
+    mdb.models['Model-1'].sketches['__profile__'])
+del mdb.models['Model-1'].sketches['__profile__']
+mdb.models['Model-1'].parts.changeKey(fromName='Part-1', toName=
+    'wing_structure')
+mdb.models['Model-1'].parts['wing_structure'].DatumPlaneByPrincipalPlane(
+    offset=0, principalPlane=XZPLANE)
+mdb.models['Model-1'].parts['wing_structure'].PartitionFaceByDatumPlane(
+    datumPlane=mdb.models['Model-1'].parts['wing_structure'].datums[2], faces=
+    mdb.models['Model-1'].parts['wing_structure'].faces[517])
+#* Feature creation failed.
+mdb.models['Model-1'].parts['wing_structure'].DatumPlaneByPrincipalPlane(
+    offset=0.1, principalPlane=YZPLANE)
+mdb.models['Model-1'].parts['wing_structure'].PartitionFaceByDatumPlane(
+    datumPlane=mdb.models['Model-1'].parts['wing_structure'].datums[3], faces=
+    mdb.models['Model-1'].parts['wing_structure'].faces[16])
+mdb.models['Model-1'].parts['wing_structure'].DatumPlaneByPrincipalPlane(
+    offset=0.3, principalPlane=YZPLANE)
+mdb.models['Model-1'].parts['wing_structure'].PartitionFaceByDatumPlane(
+    datumPlane=mdb.models['Model-1'].parts['wing_structure'].datums[5], faces=
+    mdb.models['Model-1'].parts['wing_structure'].faces[15])
+mdb.models['Model-1'].parts['wing_structure'].DatumPlaneByPrincipalPlane(
+    offset=0.5, principalPlane=YZPLANE)
+mdb.models['Model-1'].parts['wing_structure'].PartitionFaceByDatumPlane(
+    datumPlane=mdb.models['Model-1'].parts['wing_structure'].datums[7], faces=
+    mdb.models['Model-1'].parts['wing_structure'].faces[14])
+mdb.models['Model-1'].parts['wing_structure'].DatumPlaneByPrincipalPlane(
+    offset=0.7, principalPlane=YZPLANE)
+mdb.models['Model-1'].parts['wing_structure'].PartitionFaceByDatumPlane(
+    datumPlane=mdb.models['Model-1'].parts['wing_structure'].datums[9], faces=
+    mdb.models['Model-1'].parts['wing_structure'].faces[11])
+mdb.models['Model-1'].parts['wing_structure'].DatumPlaneByPrincipalPlane(
+    offset=0.12, principalPlane=YZPLANE)
+mdb.models['Model-1'].parts['wing_structure'].PartitionFaceByDatumPlane(
+    datumPlane=mdb.models['Model-1'].parts['wing_structure'].datums[11], faces=
+    mdb.models['Model-1'].parts['wing_structure'].faces[20])
+mdb.models['Model-1'].parts['wing_structure'].DatumPlaneByPrincipalPlane(
+    offset=0.35, principalPlane=YZPLANE)
+mdb.models['Model-1'].parts['wing_structure'].PartitionFaceByDatumPlane(
+    datumPlane=mdb.models['Model-1'].parts['wing_structure'].datums[13], faces=
+    mdb.models['Model-1'].parts['wing_structure'].faces[18])
+mdb.models['Model-1'].parts['wing_structure'].DatumPlaneByPrincipalPlane(
+    offset=0.6, principalPlane=YZPLANE)
+mdb.models['Model-1'].parts['wing_structure'].PartitionFaceByDatumPlane(
+    datumPlane=mdb.models['Model-1'].parts['wing_structure'].datums[15], faces=
+    mdb.models['Model-1'].parts['wing_structure'].faces[15])
+mdb.models['Model-1'].parts['wing_structure'].DatumPlaneByPrincipalPlane(
+    offset=0.8, principalPlane=YZPLANE)
+mdb.models['Model-1'].parts['wing_structure'].PartitionFaceByDatumPlane(
+    datumPlane=mdb.models['Model-1'].parts['wing_structure'].datums[17], faces=
+    mdb.models['Model-1'].parts['wing_structure'].faces[15])
+mdb.models['Model-1'].parts['wing_structure'].DatumPlaneByPrincipalPlane(
+    offset=0.1, principalPlane=YZPLANE)
+mdb.models['Model-1'].parts['wing_structure'].PartitionFaceByDatumPlane(
+    datumPlane=mdb.models['Model-1'].parts['wing_structure'].datums[19], faces=
+    mdb.models['Model-1'].parts['wing_structure'].faces[28])
+mdb.models['Model-1'].parts['wing_structure'].DatumPlaneByPrincipalPlane(
+    offset=0.3, principalPlane=YZPLANE)
+mdb.models['Model-1'].parts['wing_structure'].PartitionFaceByDatumPlane(
+    datumPlane=mdb.models['Model-1'].parts['wing_structure'].datums[21], faces=
+    mdb.models['Model-1'].parts['wing_structure'].faces[28])
+mdb.models['Model-1'].parts['wing_structure'].DatumPlaneByPrincipalPlane(
+    offset=0.5, principalPlane=YZPLANE)
+mdb.models['Model-1'].parts['wing_structure'].PartitionFaceByDatumPlane(
+    datumPlane=mdb.models['Model-1'].parts['wing_structure'].datums[23], faces=
+    mdb.models['Model-1'].parts['wing_structure'].faces[29])
+mdb.models['Model-1'].parts['wing_structure'].DatumPlaneByPrincipalPlane(
+    offset=0.7, principalPlane=YZPLANE)
+mdb.models['Model-1'].parts['wing_structure'].PartitionFaceByDatumPlane(
+    datumPlane=mdb.models['Model-1'].parts['wing_structure'].datums[25], faces=
+    mdb.models['Model-1'].parts['wing_structure'].faces[28])
+mdb.models['Model-1'].parts['wing_structure'].DatumPlaneByPrincipalPlane(
+    offset=0.12, principalPlane=YZPLANE)
+mdb.models['Model-1'].parts['wing_structure'].PartitionFaceByDatumPlane(
+    datumPlane=mdb.models['Model-1'].parts['wing_structure'].datums[27], faces=
+    mdb.models['Model-1'].parts['wing_structure'].faces[32])
+mdb.models['Model-1'].parts['wing_structure'].DatumPlaneByPrincipalPlane(
+    offset=0.35, principalPlane=YZPLANE)
+mdb.models['Model-1'].parts['wing_structure'].PartitionFaceByDatumPlane(
+    datumPlane=mdb.models['Model-1'].parts['wing_structure'].datums[29], faces=
+    mdb.models['Model-1'].parts['wing_structure'].faces[2])
+mdb.models['Model-1'].parts['wing_structure'].DatumPlaneByPrincipalPlane(
+    offset=0.6, principalPlane=YZPLANE)
+mdb.models['Model-1'].parts['wing_structure'].PartitionFaceByDatumPlane(
+    datumPlane=mdb.models['Model-1'].parts['wing_structure'].datums[31], faces=
+    mdb.models['Model-1'].parts['wing_structure'].faces[2])
+mdb.models['Model-1'].parts['wing_structure'].DatumPlaneByPrincipalPlane(
+    offset=0.8, principalPlane=YZPLANE)
+mdb.models['Model-1'].parts['wing_structure'].PartitionFaceByDatumPlane(
+    datumPlane=mdb.models['Model-1'].parts['wing_structure'].datums[33], faces=
+    mdb.models['Model-1'].parts['wing_structure'].faces[32])
+mdb.models['Model-1'].rootAssembly.DatumCsysByDefault(CARTESIAN)
+mdb.models['Model-1'].rootAssembly.Instance(dependent=ON, name=
+    'wing_structure-1', part=mdb.models['Model-1'].parts['wing_structure'])
+mdb.models['Model-1'].parts['wing_structure'].Surface(name='Surf-OML', 
+    side2Faces=
+    mdb.models['Model-1'].parts['wing_structure'].faces.getSequenceFromMask(
+    mask=('[#f301ffff #3f #0:4 #80000000 #0 #1840000 #0', ' #3edb0 #4 ]', ), ))
+mdb.models['Model-1'].parts['wing_structure'].Set(faces=
+    mdb.models['Model-1'].parts['wing_structure'].faces.getSequenceFromMask(
+    mask=('[#f301ffff #3f #0:4 #80000000 #0 #1840000 #0', ' #3edb0 #4 ]', ), ), 
+    name='Set-OML')
+mdb.models['Model-1'].rootAssembly.Set(faces=
+    mdb.models['Model-1'].rootAssembly.instances['wing_structure-1'].faces.getSequenceFromMask(
+    mask=('[#f301ffff #3f #0:4 #80000000 #0 #1840000 #0', ' #3edb0 #4 ]', ), ), 
+    name='Set-OML')
+mdb.models['Model-1'].parts['wing_structure'].Set(faces=
+    mdb.models['Model-1'].parts['wing_structure'].faces, name='Set-All')
+mdb.models['Model-1'].parts['wing_structure'].Set(faces=
+    mdb.models['Model-1'].parts['wing_structure'].faces.getSequenceFromMask(
+    mask=('[#0 #100 #0:13 #58 ]', ), ), name='Set-Spars')
+mdb.models['Model-1'].rootAssembly.Set(name='TIPNODE', vertices=
+    mdb.models['Model-1'].rootAssembly.instances['wing_structure-1'].vertices.getSequenceFromMask(
+    mask=('[#0:2 #400 ]', ), ))
+mdb.models['Model-1'].parts['wing_structure'].Set(faces=
+    mdb.models['Model-1'].parts['wing_structure'].faces.getSequenceFromMask(
+    mask=('[#5c000b0f #8 ]', ), ), name='Set-SMA')
+mdb.models['Model-1'].parts['wing_structure'].Set(faces=
+    mdb.models['Model-1'].parts['wing_structure'].faces.getSequenceFromMask(
+    mask=('[#f301ffff #7f #0:4 #80000000 #0 #1840000 #0', ' #3edb0 #4 ]', ), ), 
+    name='Set-OML-Aluminum')
+mdb.models['Model-1'].Material(name='ABS')
+mdb.models['Model-1'].materials['ABS'].Elastic(table=((2320000000.0, 0.3), ))
+mdb.models['Model-1'].materials['ABS'].Density(table=((1070, ), ))
+mdb.models['Model-1'].HomogeneousShellSection(idealization=NO_IDEALIZATION, 
+    integrationRule=SIMPSON, material='ABS', name='Section-ABS', numIntPts=5, 
+    poissonDefinition=DEFAULT, preIntegrate=OFF, temperature=GRADIENT, 
+    thickness=0.002, thicknessField='', thicknessModulus=None, thicknessType=
+    UNIFORM, useDensity=OFF)
+mdb.models['Model-1'].parts['wing_structure'].SectionAssignment(offset=0.0, 
+    offsetField='', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['Model-1'].parts['wing_structure'].sets['Set-All'], sectionName=
+    'Section-ABS', thicknessAssignment=FROM_SECTION)
+mdb.models['Model-1'].StaticStep(name='Aerodynamic loading', nlgeom=ON, 
+    previous='Initial')
+mdb.models['Model-1'].EncastreBC(createStepName='Aerodynamic loading', 
+    localCsys=None, name='BC-Encastre', region=
+    mdb.models['Model-1'].rootAssembly.instances['wing_structure-1'].sets['Set-Spars'])
+mdb.models['Model-1'].MappedField(description='', fieldDataType=SCALAR, 
+    localCsys=None, name='Distribution', partLevelData=False, pointDataFormat=
+    XYZ, regionType=POINT, xyzPointData=((1.0, 0.0017, 0.0, 2.94167913142446), 
+    (0.99975, 0.00174, 0.0, 3.0732558337885), (0.99899, 0.00186, 0.0, 
+    3.15596118956018), (0.99774, 0.00206, 0.0, 3.09017283837816), (0.99598, 
+    0.00234, 0.0, 2.86085344282942), (0.99372, 0.0027, 0.0, 2.34770430360968), 
+    (0.99096, 0.00314, 0.0, 1.68982079178952), (0.98772, 0.00365, 0.0, 
+    0.836451893599928), (0.98397, 0.00425, 0.0, -0.234958397078631), (0.97975, 
+    0.00491, 0.0, -1.39659271223538), (0.97504, 0.00566, 0.0, 
+    -2.71987840458224), (0.96985, 0.00647, 0.0, -4.2123341428257), (0.96418, 
+    0.00735, 0.0, -5.68975254365614), (0.95805, 0.0083, 0.0, 
+    -7.37205466673914), (0.95146, 0.00932, 0.0, -9.01864311346619), (0.94442, 
+    0.0104, 0.0, -10.808086265617), (0.93693, 0.01154, 0.0, -12.6200854238874), 
+    (0.92899, 0.01274, 0.0, -14.4076489088617), (0.92063, 0.014, 0.0, 
+    -16.3286687633766), (0.91184, 0.01531, 0.0, -18.2139749415355), (0.90264, 
+    0.01667, 0.0, -20.1989034800558), (0.89303, 0.01808, 0.0, 
+    -22.1274420032772), (0.88302, 0.01953, 0.0, -24.1800385601561), (0.87263, 
+    0.02102, 0.0, -26.202560442209), (0.86187, 0.02254, 0.0, 
+    -28.2006466509656), (0.85074, 0.0241, 0.0, -30.2588822093745), (0.83926, 
+    0.02569, 0.0, -32.3002007631936), (0.82743, 0.02731, 0.0, 
+    -34.461818016317), (0.81528, 0.02894, 0.0, -36.4899788998998), (0.80281, 
+    0.0306, 0.0, -38.7662558507975), (0.79003, 0.03226, 0.0, 
+    -40.8470474153259), (0.77696, 0.03394, 0.0, -42.924079645501), (0.76361, 
+    0.03562, 0.0, -45.1646429200428), (0.75, 0.0373, 0.0, -47.4070858617613), (
+    0.73614, 0.03898, 0.0, -49.5987777897108), (0.72203, 0.04065, 0.0, 
+    -51.9389634246139), (0.70771, 0.04231, 0.0, -53.9370496333706), (0.69317, 
+    0.04395, 0.0, -56.3035506087466), (0.67844, 0.04557, 0.0, -58.46516786187), 
+    (0.66354, 0.04717, 0.0, -60.8147518326563), (0.64846, 0.04873, 0.0, 
+    -63.1492984660296), (0.63324, 0.05026, 0.0, -65.0909946594874), (0.61788, 
+    0.05175, 0.0, -67.7469643800642), (0.6024, 0.0532, 0.0, -69.9630919813099), 
+    (0.58683, 0.0546, 0.0, -71.9780951946562), (0.57116, 0.05595, 0.0, 
+    -74.436699861687), (0.55542, 0.05724, 0.0, -76.2900516978433), (0.53963, 
+    0.05848, 0.0, -78.3501669234287), (0.52379, 0.05965, 0.0, 
+    -80.4178008177207), (0.50794, 0.06075, 0.0, -82.2880696584666), (0.49207, 
+    0.06178, 0.0, -84.6733673056088), (0.47621, 0.06274, 0.0, 
+    -86.2466487324474), (0.46038, 0.06362, 0.0, -92.7615751666437), (0.44458, 
+    0.06442, 0.0, -101.156168777469), (0.42885, 0.06513, 0.0, 
+    -103.383574381774), (0.41318, 0.06575, 0.0, -104.95309647426), (0.3976, 
+    0.06629, 0.0, -106.851560322655), (0.38212, 0.06673, 0.0, 
+    -109.165430617085), (0.36677, 0.06708, 0.0, -111.325168203032), (0.35154, 
+    0.06732, 0.0, -113.95294291596), (0.33647, 0.06747, 0.0, 
+    -116.167190850029), (0.32156, 0.06752, 0.0, -119.120147984513), (0.30683, 
+    0.06746, 0.0, -121.554316978247), (0.29229, 0.0673, 0.0, 
+    -124.875688879351), (0.27797, 0.06703, 0.0, -127.416998902153), (0.26387, 
+    0.06665, 0.0, -130.044773615081), (0.25, 0.06617, 0.0, -132.345486239275), 
+    (0.23639, 0.06558, 0.0, -135.58791211896), (0.22304, 0.06488, 0.0, 
+    -138.946877363596), (0.20998, 0.06407, 0.0, -140.715644176804), (0.1972, 
+    0.06315, 0.0, -144.506932872065), (0.18473, 0.06213, 0.0, 
+    -148.238072217673), (0.17257, 0.061, 0.0, -150.06322904618), (0.16075, 
+    0.05976, 0.0, -154.07255913393), (0.14927, 0.05842, 0.0, 
+    -156.627026826969), (0.13814, 0.05698, 0.0, -159.365701903317), (0.12737, 
+    0.05544, 0.0, -162.978422216798), (0.11698, 0.0538, 0.0, -165.57048325337), 
+    (0.10698, 0.05206, 0.0, -168.047884592167), (0.09737, 0.05023, 0.0, 
+    -171.188808444314), (0.08817, 0.0483, 0.0, -174.814686428032), (0.07938, 
+    0.04629, 0.0, -176.709390942074), (0.07101, 0.0442, 0.0, -181.57960859672), 
+    (0.06308, 0.04202, 0.0, -184.261893657769), (0.05559, 0.03977, 0.0, 
+    -182.07584073135), (0.04854, 0.03744, 0.0, -189.032488952054), (0.04195, 
+    0.03505, 0.0, -188.570090826603), (0.03582, 0.03258, 0.0, 
+    -189.759920149409), (0.03016, 0.03006, 0.0, -187.382141170973), (0.02497, 
+    0.02748, 0.0, -183.181085031207), (0.02026, 0.02485, 0.0, 
+    -182.188620761947), (0.01603, 0.02217, 0.0, -178.220643352083), (0.01229, 
+    0.01946, 0.0, -159.495398938505), (0.00904, 0.0167, 0.0, 
+    -138.734474972637), (0.00629, 0.01391, 0.0, -115.165328244885), (0.00403, 
+    0.0111, 0.0, -83.583160343164), (0.00227, 0.00827, 0.0, -27.3002860733603), 
+    (0.00101, 0.00542, 0.0, 30.6648903195263), (0.00026, 0.00256, 0.0, 
+    88.6676600559456), (0.0, -0.0003, 0.0, 144.854671299741), (0.00026, 
+    -0.00218, 0.0, 174.339130632344), (0.00101, -0.00405, 0.0, 
+    187.829501959011), (0.00227, -0.00591, 0.0, 178.209365349024), (0.00403, 
+    -0.00774, 0.0, 163.104359917633), (0.00629, -0.00954, 0.0, 
+    134.755219559713), (0.00904, -0.01129, 0.0, 114.441656381883), (0.01229, 
+    -0.013, 0.0, 89.7653856870969), (0.01603, -0.01466, 0.0, 81.1414726807229), 
+    (0.02026, -0.01625, 0.0, 66.3823260098315), (0.02497, -0.01777, 0.0, 
+    48.1288780575868), (0.03016, -0.01922, 0.0, 43.674066848976), (0.03582, 
+    -0.02058, 0.0, 32.64793919087), (0.04195, -0.02186, 0.0, 26.2965438010404), 
+    (0.04854, -0.02304, 0.0, 23.3210306604366), (0.05559, -0.02412, 0.0, 
+    13.225338254762), (0.06308, -0.02511, 0.0, 10.392679819582), (0.07101, 
+    -0.02599, 0.0, 10.5787668700683), (0.07938, -0.02676, 0.0, 
+    3.38340091793229), (0.08817, -0.02742, 0.0, 2.27251761654452), (0.09737, 
+    -0.02797, 0.0, 0.998103270790026), (0.10698, -0.0284, 0.0, 
+    -0.385331771208955), (0.11698, -0.02872, 0.0, -0.432323450624682), (
+    0.12737, -0.02893, 0.0, -0.389091105562213), (0.13814, -0.02902, 0.0, 
+    -1.40787071529516), (0.14927, -0.029, 0.0, -0.881563905839025), (0.16075, 
+    -0.02887, 0.0, -1.0544932860889), (0.17257, -0.02863, 0.0, 
+    -0.221800726842228), (0.18473, -0.02829, 0.0, 0.592095160638151), (0.1972, 
+    -0.02784, 0.0, 1.88530617815894), (0.20998, -0.0273, 0.0, 
+    2.68604439540291), (0.22304, -0.02666, 0.0, 3.53189462488599), (0.23639, 
+    -0.02593, 0.0, 5.08262004560495), (0.25, -0.02511, 0.0, 6.73672716103852), 
+    (0.26387, -0.02422, 0.0, 7.59009605922811), (0.27797, -0.02326, 0.0, 
+    8.75924904309138), (0.29229, -0.02222, 0.0, 11.3419117437797), (0.30683, 
+    -0.02113, 0.0, 12.2761063305643), (0.32156, -0.01999, 0.0, 
+    13.9320931131745), (0.33647, -0.01879, 0.0, 15.4170301827115), (0.35154, 
+    -0.01756, 0.0, 17.1482036523868), (0.36677, -0.0163, 0.0, 
+    18.4921656836766), (0.38212, -0.01501, 0.0, 20.1387541304037), (0.3976, 
+    -0.01371, 0.0, 21.6894795511226), (0.41318, -0.01239, 0.0, 
+    23.253362642078), (0.42885, -0.01107, 0.0, 24.6236400138406), (0.44458, 
+    -0.00976, 0.0, 25.9751207138369), (0.46038, -0.00845, 0.0, 
+    27.4074271024282), (0.47621, -0.00717, 0.0, 28.6010157595876), (0.49207, 
+    -0.0059, 0.0, 29.9243014519345), (0.50794, -0.00467, 0.0, 
+    31.0333050861456), (0.52379, -0.00347, 0.0, 32.2212547417752), (0.53963, 
+    -0.00232, 0.0, 33.1930426720924), (0.55542, -0.00121, 0.0, 
+    34.1422745962901), (0.57116, -0.00015, 0.0, 35.0595521784851), (0.58683, 
+    0.00085, 0.0, 35.7399916964248), (0.6024, 0.00179, 0.0, 36.3339665242396), 
+    (0.61788, 0.00267, 0.0, 36.6704269488562), (0.63324, 0.00348, 0.0, 
+    39.9861598484298), (0.64846, 0.00422, 0.0, 42.9034033065581), (0.66354, 
+    0.00489, 0.0, 44.271801011144), (0.67844, 0.00549, 0.0, 44.7548754755377), 
+    (0.69317, 0.00601, 0.0, 45.1665225872195), (0.70771, 0.00646, 0.0, 
+    45.1120122390972), (0.72203, 0.00683, 0.0, 45.1608835856896), (0.73614, 
+    0.00713, 0.0, 45.3356926331161), (0.75, 0.00736, 0.0, 45.1909582605156), (
+    0.76361, 0.00751, 0.0, 45.3112569598199), (0.77696, 0.0076, 0.0, 
+    45.0631408925049), (0.79003, 0.00762, 0.0, 45.0481035550918), (0.80281, 
+    0.00757, 0.0, 44.8018671549534), (0.81528, 0.00746, 0.0, 44.540593417402), 
+    (0.82743, 0.00729, 0.0, 44.2154109958452), (0.83926, 0.00707, 0.0, 
+    43.8751912368753), (0.85074, 0.00679, 0.0, 43.3150504182398), (0.86187, 
+    0.00647, 0.0, 42.8056606133734), (0.87263, 0.00611, 0.0, 42.1383787656701), 
+    (0.88302, 0.00572, 0.0, 41.5838769485645), (0.89303, 0.00529, 0.0, 
+    40.8094540717933), (0.90264, 0.00483, 0.0, 40.0030768530195), (0.91184, 
+    0.00435, 0.0, 39.1327909502402), (0.92063, 0.00386, 0.0, 38.1797996916893), 
+    (0.92899, 0.00336, 0.0, 37.0895927292444), (0.93693, 0.00285, 0.0, 
+    36.0031451011528), (0.94442, 0.00234, 0.0, 34.9091788043547), (0.95146, 
+    0.00184, 0.0, 33.5313827638856), (0.95805, 0.00135, 0.0, 32.2738854227208), 
+    (0.96418, 0.00087, 0.0, 30.8303010310697), (0.96985, 0.00041, 0.0, 
+    29.3829573050653), (0.97504, -2e-05, 0.0, 27.7307298568084), (0.97975, 
+    -0.00043, 0.0, 26.0108343901928), (0.98397, -0.0008, 0.0, 
+    24.1180095433274), (0.98772, -0.00114, 0.0, 22.2402220338749), (0.99096, 
+    -0.00144, 0.0, 19.8849990615587), (0.99372, -0.0017, 0.0, 
+    17.5767677686583), (0.99598, -0.00191, 0.0, 14.7347109975951), (0.99774, 
+    -0.00208, 0.0, 11.6990485073392), (0.99899, -0.00221, 0.0, 
+    7.94347348843437), (0.99975, -0.00228, 0.0, 4.65781526368679), (1.0, 
+    -0.0023, 0.0, 2.94167913142446), (1.0, 0.0017, 0.02, 2.94167913142446), (
+    0.99975, 0.00174, 0.02, 3.0732558337885), (0.99899, 0.00186, 0.02, 
+    3.15596118956018), (0.99774, 0.00206, 0.02, 3.09017283837816), (0.99598, 
+    0.00234, 0.02, 2.86085344282942), (0.99372, 0.0027, 0.02, 
+    2.34770430360968), (0.99096, 0.00314, 0.02, 1.68982079178952), (0.98772, 
+    0.00365, 0.02, 0.836451893599928), (0.98397, 0.00425, 0.02, 
+    -0.234958397078631), (0.97975, 0.00491, 0.02, -1.39659271223538), (0.97504, 
+    0.00566, 0.02, -2.71987840458224), (0.96985, 0.00647, 0.02, 
+    -4.2123341428257), (0.96418, 0.00735, 0.02, -5.68975254365614), (0.95805, 
+    0.0083, 0.02, -7.37205466673914), (0.95146, 0.00932, 0.02, 
+    -9.01864311346619), (0.94442, 0.0104, 0.02, -10.808086265617), (0.93693, 
+    0.01154, 0.02, -12.6200854238874), (0.92899, 0.01274, 0.02, 
+    -14.4076489088617), (0.92063, 0.014, 0.02, -16.3286687633766), (0.91184, 
+    0.01531, 0.02, -18.2139749415355), (0.90264, 0.01667, 0.02, 
+    -20.1989034800558), (0.89303, 0.01808, 0.02, -22.1274420032772), (0.88302, 
+    0.01953, 0.02, -24.1800385601561), (0.87263, 0.02102, 0.02, 
+    -26.202560442209), (0.86187, 0.02254, 0.02, -28.2006466509656), (0.85074, 
+    0.0241, 0.02, -30.2588822093745), (0.83926, 0.02569, 0.02, 
+    -32.3002007631936), (0.82743, 0.02731, 0.02, -34.461818016317), (0.81528, 
+    0.02894, 0.02, -36.4899788998998), (0.80281, 0.0306, 0.02, 
+    -38.7662558507975), (0.79003, 0.03226, 0.02, -40.8470474153259), (0.77696, 
+    0.03394, 0.02, -42.924079645501), (0.76361, 0.03562, 0.02, 
+    -45.1646429200428), (0.75, 0.0373, 0.02, -47.4070858617613), (0.73614, 
+    0.03898, 0.02, -49.5987777897108), (0.72203, 0.04065, 0.02, 
+    -51.9389634246139), (0.70771, 0.04231, 0.02, -53.9370496333706), (0.69317, 
+    0.04395, 0.02, -56.3035506087466), (0.67844, 0.04557, 0.02, 
+    -58.46516786187), (0.66354, 0.04717, 0.02, -60.8147518326563), (0.64846, 
+    0.04873, 0.02, -63.1492984660296), (0.63324, 0.05026, 0.02, 
+    -65.0909946594874), (0.61788, 0.05175, 0.02, -67.7469643800642), (0.6024, 
+    0.0532, 0.02, -69.9630919813099), (0.58683, 0.0546, 0.02, 
+    -71.9780951946562), (0.57116, 0.05595, 0.02, -74.436699861687), (0.55542, 
+    0.05724, 0.02, -76.2900516978433), (0.53963, 0.05848, 0.02, 
+    -78.3501669234287), (0.52379, 0.05965, 0.02, -80.4178008177207), (0.50794, 
+    0.06075, 0.02, -82.2880696584666), (0.49207, 0.06178, 0.02, 
+    -84.6733673056088), (0.47621, 0.06274, 0.02, -86.2466487324474), (0.46038, 
+    0.06362, 0.02, -92.7615751666437), (0.44458, 0.06442, 0.02, 
+    -101.156168777469), (0.42885, 0.06513, 0.02, -103.383574381774), (0.41318, 
+    0.06575, 0.02, -104.95309647426), (0.3976, 0.06629, 0.02, 
+    -106.851560322655), (0.38212, 0.06673, 0.02, -109.165430617085), (0.36677, 
+    0.06708, 0.02, -111.325168203032), (0.35154, 0.06732, 0.02, 
+    -113.95294291596), (0.33647, 0.06747, 0.02, -116.167190850029), (0.32156, 
+    0.06752, 0.02, -119.120147984513), (0.30683, 0.06746, 0.02, 
+    -121.554316978247), (0.29229, 0.0673, 0.02, -124.875688879351), (0.27797, 
+    0.06703, 0.02, -127.416998902153), (0.26387, 0.06665, 0.02, 
+    -130.044773615081), (0.25, 0.06617, 0.02, -132.345486239275), (0.23639, 
+    0.06558, 0.02, -135.58791211896), (0.22304, 0.06488, 0.02, 
+    -138.946877363596), (0.20998, 0.06407, 0.02, -140.715644176804), (0.1972, 
+    0.06315, 0.02, -144.506932872065), (0.18473, 0.06213, 0.02, 
+    -148.238072217673), (0.17257, 0.061, 0.02, -150.06322904618), (0.16075, 
+    0.05976, 0.02, -154.07255913393), (0.14927, 0.05842, 0.02, 
+    -156.627026826969), (0.13814, 0.05698, 0.02, -159.365701903317), (0.12737, 
+    0.05544, 0.02, -162.978422216798), (0.11698, 0.0538, 0.02, 
+    -165.57048325337), (0.10698, 0.05206, 0.02, -168.047884592167), (0.09737, 
+    0.05023, 0.02, -171.188808444314), (0.08817, 0.0483, 0.02, 
+    -174.814686428032), (0.07938, 0.04629, 0.02, -176.709390942074), (0.07101, 
+    0.0442, 0.02, -181.57960859672), (0.06308, 0.04202, 0.02, 
+    -184.261893657769), (0.05559, 0.03977, 0.02, -182.07584073135), (0.04854, 
+    0.03744, 0.02, -189.032488952054), (0.04195, 0.03505, 0.02, 
+    -188.570090826603), (0.03582, 0.03258, 0.02, -189.759920149409), (0.03016, 
+    0.03006, 0.02, -187.382141170973), (0.02497, 0.02748, 0.02, 
+    -183.181085031207), (0.02026, 0.02485, 0.02, -182.188620761947), (0.01603, 
+    0.02217, 0.02, -178.220643352083), (0.01229, 0.01946, 0.02, 
+    -159.495398938505), (0.00904, 0.0167, 0.02, -138.734474972637), (0.00629, 
+    0.01391, 0.02, -115.165328244885), (0.00403, 0.0111, 0.02, 
+    -83.583160343164), (0.00227, 0.00827, 0.02, -27.3002860733603), (0.00101, 
+    0.00542, 0.02, 30.6648903195263), (0.00026, 0.00256, 0.02, 
+    88.6676600559456), (0.0, -0.0003, 0.02, 144.854671299741), (0.00026, 
+    -0.00218, 0.02, 174.339130632344), (0.00101, -0.00405, 0.02, 
+    187.829501959011), (0.00227, -0.00591, 0.02, 178.209365349024), (0.00403, 
+    -0.00774, 0.02, 163.104359917633), (0.00629, -0.00954, 0.02, 
+    134.755219559713), (0.00904, -0.01129, 0.02, 114.441656381883), (0.01229, 
+    -0.013, 0.02, 89.7653856870969), (0.01603, -0.01466, 0.02, 
+    81.1414726807229), (0.02026, -0.01625, 0.02, 66.3823260098315), (0.02497, 
+    -0.01777, 0.02, 48.1288780575868), (0.03016, -0.01922, 0.02, 
+    43.674066848976), (0.03582, -0.02058, 0.02, 32.64793919087), (0.04195, 
+    -0.02186, 0.02, 26.2965438010404), (0.04854, -0.02304, 0.02, 
+    23.3210306604366), (0.05559, -0.02412, 0.02, 13.225338254762), (0.06308, 
+    -0.02511, 0.02, 10.392679819582), (0.07101, -0.02599, 0.02, 
+    10.5787668700683), (0.07938, -0.02676, 0.02, 3.38340091793229), (0.08817, 
+    -0.02742, 0.02, 2.27251761654452), (0.09737, -0.02797, 0.02, 
+    0.998103270790026), (0.10698, -0.0284, 0.02, -0.385331771208955), (0.11698, 
+    -0.02872, 0.02, -0.432323450624682), (0.12737, -0.02893, 0.02, 
+    -0.389091105562213), (0.13814, -0.02902, 0.02, -1.40787071529516), (
+    0.14927, -0.029, 0.02, -0.881563905839025), (0.16075, -0.02887, 0.02, 
+    -1.0544932860889), (0.17257, -0.02863, 0.02, -0.221800726842228), (0.18473, 
+    -0.02829, 0.02, 0.592095160638151), (0.1972, -0.02784, 0.02, 
+    1.88530617815894), (0.20998, -0.0273, 0.02, 2.68604439540291), (0.22304, 
+    -0.02666, 0.02, 3.53189462488599), (0.23639, -0.02593, 0.02, 
+    5.08262004560495), (0.25, -0.02511, 0.02, 6.73672716103852), (0.26387, 
+    -0.02422, 0.02, 7.59009605922811), (0.27797, -0.02326, 0.02, 
+    8.75924904309138), (0.29229, -0.02222, 0.02, 11.3419117437797), (0.30683, 
+    -0.02113, 0.02, 12.2761063305643), (0.32156, -0.01999, 0.02, 
+    13.9320931131745), (0.33647, -0.01879, 0.02, 15.4170301827115), (0.35154, 
+    -0.01756, 0.02, 17.1482036523868), (0.36677, -0.0163, 0.02, 
+    18.4921656836766), (0.38212, -0.01501, 0.02, 20.1387541304037), (0.3976, 
+    -0.01371, 0.02, 21.6894795511226), (0.41318, -0.01239, 0.02, 
+    23.253362642078), (0.42885, -0.01107, 0.02, 24.6236400138406), (0.44458, 
+    -0.00976, 0.02, 25.9751207138369), (0.46038, -0.00845, 0.02, 
+    27.4074271024282), (0.47621, -0.00717, 0.02, 28.6010157595876), (0.49207, 
+    -0.0059, 0.02, 29.9243014519345), (0.50794, -0.00467, 0.02, 
+    31.0333050861456), (0.52379, -0.00347, 0.02, 32.2212547417752), (0.53963, 
+    -0.00232, 0.02, 33.1930426720924), (0.55542, -0.00121, 0.02, 
+    34.1422745962901), (0.57116, -0.00015, 0.02, 35.0595521784851), (0.58683, 
+    0.00085, 0.02, 35.7399916964248), (0.6024, 0.00179, 0.02, 
+    36.3339665242396), (0.61788, 0.00267, 0.02, 36.6704269488562), (0.63324, 
+    0.00348, 0.02, 39.9861598484298), (0.64846, 0.00422, 0.02, 
+    42.9034033065581), (0.66354, 0.00489, 0.02, 44.271801011144), (0.67844, 
+    0.00549, 0.02, 44.7548754755377), (0.69317, 0.00601, 0.02, 
+    45.1665225872195), (0.70771, 0.00646, 0.02, 45.1120122390972), (0.72203, 
+    0.00683, 0.02, 45.1608835856896), (0.73614, 0.00713, 0.02, 
+    45.3356926331161), (0.75, 0.00736, 0.02, 45.1909582605156), (0.76361, 
+    0.00751, 0.02, 45.3112569598199), (0.77696, 0.0076, 0.02, 
+    45.0631408925049), (0.79003, 0.00762, 0.02, 45.0481035550918), (0.80281, 
+    0.00757, 0.02, 44.8018671549534), (0.81528, 0.00746, 0.02, 
+    44.540593417402), (0.82743, 0.00729, 0.02, 44.2154109958452), (0.83926, 
+    0.00707, 0.02, 43.8751912368753), (0.85074, 0.00679, 0.02, 
+    43.3150504182398), (0.86187, 0.00647, 0.02, 42.8056606133734), (0.87263, 
+    0.00611, 0.02, 42.1383787656701), (0.88302, 0.00572, 0.02, 
+    41.5838769485645), (0.89303, 0.00529, 0.02, 40.8094540717933), (0.90264, 
+    0.00483, 0.02, 40.0030768530195), (0.91184, 0.00435, 0.02, 
+    39.1327909502402), (0.92063, 0.00386, 0.02, 38.1797996916893), (0.92899, 
+    0.00336, 0.02, 37.0895927292444), (0.93693, 0.00285, 0.02, 
+    36.0031451011528), (0.94442, 0.00234, 0.02, 34.9091788043547), (0.95146, 
+    0.00184, 0.02, 33.5313827638856), (0.95805, 0.00135, 0.02, 
+    32.2738854227208), (0.96418, 0.00087, 0.02, 30.8303010310697), (0.96985, 
+    0.00041, 0.02, 29.3829573050653), (0.97504, -2e-05, 0.02, 
+    27.7307298568084), (0.97975, -0.00043, 0.02, 26.0108343901928), (0.98397, 
+    -0.0008, 0.02, 24.1180095433274), (0.98772, -0.00114, 0.02, 
+    22.2402220338749), (0.99096, -0.00144, 0.02, 19.8849990615587), (0.99372, 
+    -0.0017, 0.02, 17.5767677686583), (0.99598, -0.00191, 0.02, 
+    14.7347109975951), (0.99774, -0.00208, 0.02, 11.6990485073392), (0.99899, 
+    -0.00221, 0.02, 7.94347348843437), (0.99975, -0.00228, 0.02, 
+    4.65781526368679), (1.0, -0.0023, 0.02, 2.94167913142446)))
+mdb.models['Model-1'].Pressure(createStepName='Aerodynamic loading', 
+    distributionType=FIELD, field='Distribution', magnitude=1.0, name=
+    'Pressure', region=
+    mdb.models['Model-1'].rootAssembly.instances['wing_structure-1'].surfaces['Surf-OML'])
+mdb.models['Model-1'].parts['wing_structure'].seedPart(deviationFactor=0.1, 
+    minSizeFactor=0.1, size=0.002)
+mdb.models['Model-1'].parts['wing_structure'].generateMesh()
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='Model-1', modelPrint=OFF, 
+    multiprocessingMode=DEFAULT, name='Analysis', nodalOutputPrecision=SINGLE, 
+    numCpus=4, numDomains=4, numGPUs=0, queue=None, resultsFormat=ODB, scratch=
+    '', type=ANALYSIS, userSubroutine='', waitHours=0, waitMinutes=0)
+mdb.jobs['Analysis'].submit()
+#* Abaqus/Analysis exited with error.
